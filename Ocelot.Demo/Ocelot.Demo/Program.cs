@@ -1,7 +1,10 @@
+using Ocelot.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddOcelot();
 
 var app = builder.Build();
 
