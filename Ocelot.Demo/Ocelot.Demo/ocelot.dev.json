@@ -2,7 +2,7 @@
     "Routes": [
         {
             "DownstreamPathTemplate": "/weatherforecast",
-            "DownstreamScheme": "\",",
+            "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "",
