@@ -8,8 +8,9 @@
                     "Host": "",
                     "Port": 7279
                 }
-            ]
-
+            ],
+            "UpstreamPathTemplate": "",
+            "UpstreamHttpMethod": [ "Get"]
         }
     ]
 }
