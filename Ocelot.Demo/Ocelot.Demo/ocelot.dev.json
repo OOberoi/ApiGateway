@@ -10,7 +10,10 @@
                 }
             ],
             "UpstreamPathTemplate": "",
-            "UpstreamHttpMethod": [ "Get"]
+            "UpstreamHttpMethod": [ "Get" ]
         }
-    ]
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl":  ""
+    }
 }
