@@ -9,7 +9,7 @@
                     "Port": 5020
                 }
             ],
-            "UpstreamPathTemplate": "/api/ weather",
+            "UpstreamPathTemplate": "/api/weather",
             "UpstreamHttpMethod": [ "Get" ]
         }
     ],
