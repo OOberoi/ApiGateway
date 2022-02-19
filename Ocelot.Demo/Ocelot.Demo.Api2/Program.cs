@@ -9,12 +9,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-//// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 //app.UseHttpsRedirection();
 
@@ -22,9 +22,9 @@ var app = builder.Build();
 
 //app.MapControllers();
 
-app.Run(async (context) =>
+app.Run(async (ctx) =>
 {
-    await context.Response.WriteAsync("Hello Obi!");
+    await ctx.Response.WriteAsync("Hello Obi Oberoi!");
 });
 
 app.Run();
