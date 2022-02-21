@@ -2,6 +2,7 @@
 
 namespace Ocelot.Demo.Api2.Controllers
 {
+    [ApiController]
     public class CitiesController : ControllerBase
     {
     }
