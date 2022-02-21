@@ -5,6 +5,7 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class CitiesController : ControllerBase
     {
+        [HttpGet("api/cities")]   
         public JsonResult GetCities()
         {
             return new JsonResult(
