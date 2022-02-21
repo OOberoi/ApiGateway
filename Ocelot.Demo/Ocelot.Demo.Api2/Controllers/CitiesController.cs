@@ -1,6 +1,8 @@
-﻿namespace Ocelot.Demo.Api2.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Ocelot.Demo.Api2.Controllers
 {
-    public class CitiesController
+    public class CitiesController : ControllerBase
     {
     }
 }
