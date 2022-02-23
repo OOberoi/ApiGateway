@@ -13,6 +13,9 @@ namespace Ocelot.Demo.Api2.Controllers
             return new JsonResult(CitiesDataStore.Instance.Cities);
                 
         }
+
+
+        #region Redundant
         //public JsonResult GetCitiesOld()
         //{
         //    return new JsonResult(
@@ -24,5 +27,6 @@ namespace Ocelot.Demo.Api2.Controllers
         //            new { id = 5, City = "London" }
         //        });
         //}
+        #endregion
     }
 }
