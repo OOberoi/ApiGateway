@@ -11,10 +11,11 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             return new JsonResult(
                 new List<Object> {
-                    new { id = 1, Name = "Toronto"},
-                    new { id = 2, Name = "New Delhi"},
-                    new { id = 3, Name = "Dallas"},
-                    new { id = 4, Name = "Melbourne"}
+                    new { id = 1, City = "Toronto"},
+                    new { id = 2, City = "New Delhi"},
+                    new { id = 3, City = "Dallas"},
+                    new { id = 4, City = "Melbourne"},
+                    new { id = 5, City = "London" }
                 });
         }
     }
