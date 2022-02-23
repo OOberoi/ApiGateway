@@ -5,6 +5,8 @@ namespace Ocelot.Demo.Api2
     public class CitiesDataStore
     {
         public List<CityDto> Cities { get; set; }
+
+        //add a singleton
         public static CitiesDataStore Instance { get; set; } = new CitiesDataStore();
 
         public CitiesDataStore()
