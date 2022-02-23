@@ -5,6 +5,7 @@ namespace Ocelot.Demo.Api2
     public class CitiesDataStore
     {
         public List<CityDto> Cities { get; set; }
+        public static CitiesDataStore Instance { get; set; } = new CitiesDataStore();
 
         public CitiesDataStore()
         {
@@ -41,8 +42,6 @@ namespace Ocelot.Demo.Api2
                     Name = "Melbourne",
                     Description = "City known for four seasons in a day"
                 },
-
-
             };
         }
 
