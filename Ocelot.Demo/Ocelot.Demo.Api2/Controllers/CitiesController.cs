@@ -17,7 +17,8 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpGet("{id}")]
         public JsonResult GetCity(int id)
         { 
-
+            return new JsonResult(
+                CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == id));
         }
         #region Redundant
         //public JsonResult GetCitiesOld()
