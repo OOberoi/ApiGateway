@@ -18,11 +18,11 @@ namespace Ocelot.Demo.Api2.Controllers
         { 
             var cities = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == id);
 
-            if (cities != null)
+            if (cities == null)
             {
-                return Ok(cities);
+                return NotFound();                
             }
-            return NotFound();
+            return Ok(cities);
         }
         #region Redundant
         //public JsonResult GetCitiesOld()
