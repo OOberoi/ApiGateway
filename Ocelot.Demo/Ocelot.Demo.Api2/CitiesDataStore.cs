@@ -18,7 +18,20 @@ namespace Ocelot.Demo.Api2
                 {
                     Id = 1,
                     Name = "Toronto",
-                    Description = "City known for CN Tower"                
+                    Description = "City known for CN Tower",
+                    PointsOfInterest = new List<PointOfInterestDto>()
+                    { 
+                        new PointOfInterestDto() { 
+                            Id = 1,
+                            Name = "Niagra Falls",
+                            Description = "One of the seven wonders of the world!"
+                        },
+                        new PointOfInterestDto() { 
+                            Id = 2,
+                            Name = "CN Tower",
+                            Description = "The tallest building in Canada"
+                        }
+                    }
                 },
                 new CityDto()
                 {
