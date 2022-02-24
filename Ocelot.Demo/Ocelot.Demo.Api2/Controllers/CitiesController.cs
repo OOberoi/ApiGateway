@@ -14,10 +14,15 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         [HttpGet("{id}")]
-        public JsonResult GetCity(int id)
+        public ActionResult<CityDto> GetCity(int id)
         { 
-            return new JsonResult(
-                CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == id));
+            var cities = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == id);
+
+            if (cities != null)
+            {
+                return Ok(cities);
+            }
+            return NotFound();
         }
         #region Redundant
         //public JsonResult GetCitiesOld()
