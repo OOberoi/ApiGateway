@@ -12,6 +12,7 @@ namespace Ocelot.Demo.Api2.Controllers
             return Ok(CitiesDataStore.Instance.Cities);
         }
 
+
         [HttpGet("{id}")]
         public ActionResult<CityDto> GetCity(int id)
         { 
