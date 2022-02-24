@@ -7,11 +7,6 @@ namespace Ocelot.Demo.Api2.Controllers
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
-        //public JsonResult GetCities()
-        //{
-        //    return new JsonResult(CitiesDataStore.Instance.Cities);
-        //}
-
         public ActionResult<IEnumerable<CityDto>> GetCities()
         {
             return Ok(CitiesDataStore.Instance.Cities);
@@ -39,6 +34,11 @@ namespace Ocelot.Demo.Api2.Controllers
         //            new { id = 4, City = "Melbourne"},
         //            new { id = 5, City = "London" }
         //        });
+        //}
+
+        //public JsonResult GetCities()
+        //{
+        //    return new JsonResult(CitiesDataStore.Instance.Cities);
         //}
         #endregion
     }
