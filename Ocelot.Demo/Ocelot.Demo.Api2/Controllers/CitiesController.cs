@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Ocelot.Demo.Api2.Models;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
