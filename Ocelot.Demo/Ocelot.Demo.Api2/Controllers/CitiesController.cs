@@ -7,10 +7,14 @@ namespace Ocelot.Demo.Api2.Controllers
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
-        public JsonResult GetCities()
+        //public JsonResult GetCities()
+        //{
+        //    return new JsonResult(CitiesDataStore.Instance.Cities);
+        //}
+
+        public ActionResult<IEnumerable<CityDto>> GetCities()
         {
-            return new JsonResult(CitiesDataStore.Instance.Cities);
-                
+            return Ok(CitiesDataStore.Instance.Cities);
         }
 
         [HttpGet("{id}")]
