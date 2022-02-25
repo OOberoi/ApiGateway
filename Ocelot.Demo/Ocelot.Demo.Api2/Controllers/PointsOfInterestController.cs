@@ -10,8 +10,8 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<PointOfInterestDto>> GetPointsOfInterest(int cityId)
-        { 
-            return Ok()
+        {
+            return Ok();
         }
     }
 }
