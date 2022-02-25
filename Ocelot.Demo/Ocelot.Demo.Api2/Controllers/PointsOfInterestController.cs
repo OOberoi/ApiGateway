@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Ocelot.Demo.Api2.Models;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
@@ -7,5 +8,9 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class PointsOfInterestController : ControllerBase
     {
+        public ActionResult<IEnumerable<PointOfInterestDto>> GetPointsOfInterest()
+        { 
+
+        }
     }
 }
