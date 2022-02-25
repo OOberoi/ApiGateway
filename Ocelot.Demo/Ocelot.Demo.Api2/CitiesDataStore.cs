@@ -37,7 +37,15 @@ namespace Ocelot.Demo.Api2
                 {
                     Id = 2,
                     Name = "Mumbai",
-                    Description = "City known for Bollywood"
+                    Description = "City known for Bollywood",
+                    PointsOfInterest = new List<PointOfInterestDto>()
+                    {
+                            new PointOfInterestDto() {
+                                Id= 3,
+                                Name = "Bollywood",
+                                Description= "The city where bollywood movies are made!"
+                            }
+                    }
                 },
                 new CityDto()
                 {
