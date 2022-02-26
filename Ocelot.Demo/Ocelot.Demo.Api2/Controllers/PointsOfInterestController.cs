@@ -28,6 +28,12 @@ namespace Ocelot.Demo.Api2.Controllers
                 return NotFound();
             }
 
+            // pont of interest
+            var poi = city.PointsOfInterest.FirstOrDefault(c => c.Id == poiId);
+            if (poi == null)
+            { 
+                return NotFound();
+            }
 
         }
     }
