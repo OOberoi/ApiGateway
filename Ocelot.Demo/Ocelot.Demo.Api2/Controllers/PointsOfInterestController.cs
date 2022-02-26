@@ -21,7 +21,13 @@ namespace Ocelot.Demo.Api2.Controllers
 
         [HttpGet("{id}")]
         public ActionResult<PointOfInterestDto> GetPointOfInterest(int cityId, int poiId)
-        { 
+        {
+            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+            if (city == null)
+            {
+                return NotFound();
+            }
+
 
         }
     }
