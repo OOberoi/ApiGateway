@@ -51,7 +51,15 @@ namespace Ocelot.Demo.Api2
                 {
                     Id = 3,
                     Name = "New Delhi",
-                    Description = "City known for rich culture and vibrancy"
+                    Description = "City known for rich culture and diversity",
+                    PointsOfInterest = new List<PointOfInterestDto>()
+                    { 
+                        new PointOfInterestDto {
+                            Id= 4,
+                            Name = "Cannough Place",
+                            Description = "Shopping Malls and a Circular Park"
+                        }
+                    }                    
                 },
                 new CityDto()
                 {
