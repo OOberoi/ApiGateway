@@ -34,7 +34,7 @@ namespace Ocelot.Demo.Api2.Controllers
             { 
                 return NotFound();
             }
-
+            return Ok(poi);
         }
     }
 }
