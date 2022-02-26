@@ -12,7 +12,11 @@ namespace Ocelot.Demo.Api2.Controllers
         public ActionResult<IEnumerable<PointOfInterestDto>> GetPointsOfInterest(int cityId)
         {
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
-            return Ok();
+            if (city == null)
+            { 
+                return NotFound();
+            }
+            return Ok(city.PointsOfInterest);
         }
     }
 }
