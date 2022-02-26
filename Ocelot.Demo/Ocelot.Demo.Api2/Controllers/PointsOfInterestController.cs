@@ -18,6 +18,11 @@ namespace Ocelot.Demo.Api2.Controllers
             }
             return Ok(city.PointsOfInterest);
         }
+
+        public ActionResult<PointOfInterestDto> GetPointOfInterest(int cityId, int poiId)
+        { 
+
+        }
     }
 }
 
