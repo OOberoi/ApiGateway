@@ -60,8 +60,8 @@ namespace Ocelot.Demo.Api2
                     PointsOfInterest = new List<PointOfInterestDto>()
                     { 
                         new PointOfInterestDto {
-                            Id= 4,
-                            Name = "Cannough Place",
+                            Id= 5,
+                            Name = "Cannought Place",
                             Description = "Shopping Malls and a Circular Park"
                         }
                     }                    
