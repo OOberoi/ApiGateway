@@ -70,7 +70,15 @@ namespace Ocelot.Demo.Api2
                 {
                     Id = 4,
                     Name = "New York",
-                    Description = "City that doesn't sleep"
+                    Description = "City that doesn't sleep",
+                    PointsOfInterest = new List <PointOfInterestDto>()
+                    { 
+                        new PointOfInterestDto { 
+                            Id = 6,
+                            Name = "Guganham museum",
+                            Description = "Amazing museum"
+                        }
+                    }
                 },
                 new CityDto()
                 {
