@@ -63,6 +63,11 @@ namespace Ocelot.Demo.Api2
                             Id= 5,
                             Name = "Cannought Place",
                             Description = "Shopping Malls and a Circular Park"
+                        },
+                        new PointOfInterestDto() {
+                            Id = 6,
+                            Name = "IGI Airport",
+                            Description = "World's six largest airport"
                         }
                     }                    
                 },
