@@ -44,6 +44,11 @@ namespace Ocelot.Demo.Api2
                                 Id= 3,
                                 Name = "Bollywood",
                                 Description= "The city where bollywood movies are made!"
+                            },
+                            new PointOfInterestDto() {
+                                Id= 4,
+                                Name = "Monuments",
+                                Description= "The city is known for its architectural heritage and monuments!"
                             }
                     }
                 },
