@@ -6,6 +6,7 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
+
     {
         public ActionResult<IEnumerable<CityDto>> GetCities()
         {
