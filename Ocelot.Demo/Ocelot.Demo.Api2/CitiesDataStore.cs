@@ -103,8 +103,8 @@ namespace Ocelot.Demo.Api2
                             Description= "A big mall on Bourke Street"
                         },
                         new PointOfInterestDto {
-                            Id = 8,
-                            Name = "Myers",
+                            Id = 9,
+                            Name = "St. Kilda Road",
                             Description= "A big mall on Bourke Street"
                         },
 
