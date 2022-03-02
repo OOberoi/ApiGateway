@@ -94,7 +94,21 @@ namespace Ocelot.Demo.Api2
                 {
                     Id = 5,
                     Name = "Melbourne",
-                    Description = "City known for four seasons in a day"
+                    Description = "City known for four seasons in a day",
+                    PointsOfInterest = new List <PointOfInterestDto>()
+                    { 
+                        new PointOfInterestDto { 
+                            Id = 8,
+                            Name = "Myers",
+                            Description= "A big mall on Bourke Street"
+                        },
+                        new PointOfInterestDto {
+                            Id = 8,
+                            Name = "Myers",
+                            Description= "A big mall on Bourke Street"
+                        },
+
+                    }
                 },
             };
         }
