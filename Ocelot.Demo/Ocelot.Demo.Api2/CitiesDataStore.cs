@@ -105,7 +105,7 @@ namespace Ocelot.Demo.Api2
                         new PointOfInterestDto {
                             Id = 9,
                             Name = "St. Kilda Road",
-                            Description= "A big mall on Bourke Street"
+                            Description= "Known for its gardens, beaches and culture"
                         },
 
                     }
