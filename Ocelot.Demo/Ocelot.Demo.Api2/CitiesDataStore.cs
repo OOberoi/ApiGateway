@@ -82,6 +82,11 @@ namespace Ocelot.Demo.Api2
                             Id = 6,
                             Name = "Guganham museum",
                             Description = "Amazing museum"
+                        },
+                        new PointOfInterestDto {
+                            Id = 7,
+                            Name = "Broadway",
+                            Description = "Musicals and Plays"
                         }
                     }
                 },
