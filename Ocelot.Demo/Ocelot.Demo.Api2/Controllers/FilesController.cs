@@ -7,5 +7,10 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
+
+        public ActionResult GetFile(string fileId)
+        { 
+        
+        }
     }
 }
