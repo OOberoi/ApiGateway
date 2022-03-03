@@ -10,7 +10,7 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpGet("{fieldId}")]
         public ActionResult GetFile(string fileId)
         { 
-        
+         
         }
     }
 }
