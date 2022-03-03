@@ -4,11 +4,11 @@ using System.IO;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
-    [Route("api/[files]")]
+    [Route("api/files")]
     [ApiController]
     public class FilesController : ControllerBase
     {
-        [HttpGet("{fieldId}")]
+        [HttpGet("{fileId}")]
         public ActionResult GetFile(string fileId)
         {
             var filePath = "Sterling.pdf";
