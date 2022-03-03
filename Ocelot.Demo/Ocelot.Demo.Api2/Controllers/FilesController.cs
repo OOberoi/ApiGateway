@@ -8,6 +8,9 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
+        //todo: to supply the absolute path
+        string appPath = "";
+
         [HttpGet("{fileId}")]
         public ActionResult GetFile(string fileId)
         {
