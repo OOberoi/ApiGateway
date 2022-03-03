@@ -7,7 +7,7 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
-
+        [HttpGet("{fieldId}")]
         public ActionResult GetFile(string fileId)
         { 
         
