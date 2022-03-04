@@ -17,11 +17,11 @@ namespace Ocelot.Demo.Api2.Controllers
             var fileName = "Sterling.pdf";
             var filePath = Path.Combine(appPath, fileName);
             if (!System.IO.File.Exists(filePath))
-            { 
+            {
                 return NotFound();
             }
-            var bytes = System.IO.File.ReadAllBytes(fileName);
-            return File(bytes, "text/plan", Path.GetFileName(fileName));
+            var bytes = System.IO.File.ReadAllBytes(filePath);
+            return File(bytes, "text/plan", Path.GetFileName(filePath));
         }
     }
 }
