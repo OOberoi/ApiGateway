@@ -9,18 +9,19 @@ namespace Ocelot.Demo.Api2.Controllers
     public class FilesController : ControllerBase
     {
         //todo: to supply the absolute path
-        string appPath = "";
+        private static readonly string appPath = Directory.GetCurrentDirectory();
+
 
         [HttpGet("{fileId}")]
         public ActionResult GetFile(string fileId)
         {
-            var filePath = "Sterling.pdf";
-            if (!System.IO.File.Exists(filePath))
+            var fileName = "Sterling.pdf";
+            if (!System.IO.File.Exists( fileName))
             { 
                 return NotFound();
             }
-            var bytes = System.IO.File.ReadAllBytes(filePath);
-            return File(bytes, "text/plan", Path.GetFileName(filePath));
+            var bytes = System.IO.File.ReadAllBytes(fileName);
+            return File(bytes, "text/plan", Path.GetFileName(fileName));
         }
     }
 }
