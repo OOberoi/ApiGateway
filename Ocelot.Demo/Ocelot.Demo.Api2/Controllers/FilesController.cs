@@ -10,13 +10,13 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         //todo: to supply the absolute path
         private static readonly string appPath = Directory.GetCurrentDirectory();
-
+        private static readonly string backSlashes = "\\";
 
         [HttpGet("{fileId}")]
         public ActionResult GetFile(string fileId)
         {
             var fileName = "Sterling.pdf";
-            if (!System.IO.File.Exists( fileName))
+            if (!System.IO.File.Exists(appPath + backSlashes + "Files" + backSlashes + fileName))
             { 
                 return NotFound();
             }
