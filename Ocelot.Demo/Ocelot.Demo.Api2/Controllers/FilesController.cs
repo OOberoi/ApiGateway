@@ -29,7 +29,7 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 return NotFound();
             }
-
+            // Is used for any file extension
             if (!_fileExtensionContentTypeProvider.TryGetContentType(filePath, out var contentType))
             {
                 contentType = "application/octet-stream";
