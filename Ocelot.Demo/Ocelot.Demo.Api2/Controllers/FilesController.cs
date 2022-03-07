@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 using System.IO;
 
 namespace Ocelot.Demo.Api2.Controllers
@@ -8,6 +9,13 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
+        private readonly FileExtensionContentTypeProvider fileExtensionContentTypeProvider;
+
+        public FilesController()
+        {
+
+        }
+
         //todo: to supply the absolute path
         private static readonly string appPath = Directory.GetCurrentDirectory();
 
