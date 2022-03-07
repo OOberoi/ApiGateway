@@ -36,7 +36,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
 
             var bytes = System.IO.File.ReadAllBytes(filePath);
-            return File(bytes, "text/plan", Path.GetFileName(filePath));
+            return File(bytes, contentType, Path.GetFileName(filePath));
         }
     }
 }
