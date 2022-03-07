@@ -29,6 +29,12 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 return NotFound();
             }
+
+            if (!_fileExtensionContentTypeProvider.TryGetContentType(filePath, out var contentType))
+            {
+                contentType = "application/octet-stream";
+            }
+
             var bytes = System.IO.File.ReadAllBytes(filePath);
             return File(bytes, "text/plan", Path.GetFileName(filePath));
         }
