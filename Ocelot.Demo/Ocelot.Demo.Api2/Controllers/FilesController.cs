@@ -9,11 +9,12 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
-        private readonly FileExtensionContentTypeProvider fileExtensionContentTypeProvider;
+        private readonly FileExtensionContentTypeProvider _fileExtensionContentTypeProvider;
 
-        public FilesController()
+        public FilesController(FileExtensionContentTypeProvider fileExtensionContentTypeProvider)
         {
-
+            _fileExtensionContentTypeProvider = fileExtensionContentTypeProvider
+                ?? throw new System.ArgumentNullException(nameof(fileExtensionContentTypeProvider));
         }
 
         //todo: to supply the absolute path
