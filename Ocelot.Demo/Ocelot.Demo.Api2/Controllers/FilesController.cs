@@ -13,7 +13,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
         [HttpGet("{fileId}")]
         public ActionResult GetFile(string fileId)
-        {
+        {  
             var fileName = "Sterling.pdf";
             var filePath = Path.Combine(appPath, fileName);
             if (!System.IO.File.Exists(filePath))
