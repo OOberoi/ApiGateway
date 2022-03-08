@@ -36,6 +36,11 @@ namespace Ocelot.Demo.Api2.Controllers
             }
             return Ok(poi);
         }
+
+        public ActionResult<PointOfInterestDto> CreatePointOfInterest()
+        { 
+        
+        }
     }
 }
 
