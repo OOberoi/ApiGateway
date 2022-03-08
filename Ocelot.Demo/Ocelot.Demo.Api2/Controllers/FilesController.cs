@@ -24,7 +24,7 @@ namespace Ocelot.Demo.Api2.Controllers
         public ActionResult GetFile(string fileId)
         {  
             var fileName = "Sterling.pdf";
-            var filePath = Path.Combine(appPath, fileName);
+            var filePath = Path.Combine(appPath + "\\" + "files" + "\\" + fileName);
             if (!System.IO.File.Exists(filePath))
             {
                 return NotFound();
