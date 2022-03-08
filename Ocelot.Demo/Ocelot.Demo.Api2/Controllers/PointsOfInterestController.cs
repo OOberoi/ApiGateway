@@ -19,7 +19,7 @@ namespace Ocelot.Demo.Api2.Controllers
             return Ok(city.PointsOfInterest);
         }
 
-        [HttpGet("{poiId}")]
+        [HttpGet("{poiId}", Name = "GetPointOfInterest")]
         public ActionResult<PointOfInterestDto> GetPointOfInterest(int cityId, int poiId)
         {
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
@@ -54,6 +54,17 @@ namespace Ocelot.Demo.Api2.Controllers
                 Name = poi.Name,
                 Description = poi.Description
             };
+
+            city.PointsOfInterest.Add(pointOfInterest);
+
+            return CreatedAtRoute("GetPointOfInterest",
+                new
+                {
+                    cityId = cityId,
+                    pointOfInterestId = pointOfInterest
+                },
+                pointOfInterest);
+              
         }
     }
 }
