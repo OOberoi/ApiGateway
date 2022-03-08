@@ -36,7 +36,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
             return Ok(poi);
         }
-
+        [HttpPost]
         public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
         { 
         
