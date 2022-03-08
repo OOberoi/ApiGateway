@@ -2,5 +2,7 @@
 {
     public class PointOfInterestForCreationDto
     {
+        public string Name { get; set; }
+
     }
 }
