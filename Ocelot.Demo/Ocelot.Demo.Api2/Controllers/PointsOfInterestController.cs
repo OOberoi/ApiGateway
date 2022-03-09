@@ -63,8 +63,7 @@ namespace Ocelot.Demo.Api2.Controllers
                     cityId = cityId,
                     pointOfInterestId = pointOfInterest
                 },
-                pointOfInterest);
-              
+                pointOfInterest);              
         }
     }
 }
