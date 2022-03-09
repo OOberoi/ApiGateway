@@ -61,7 +61,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 new
                 {
                     cityId = cityId,
-                    pointOfInterestId = pointOfInterest
+                    pointOfInterestId = pointOfInterest.Id
                 },
                 pointOfInterest);              
         }
