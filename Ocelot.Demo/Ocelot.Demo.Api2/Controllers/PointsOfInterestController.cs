@@ -45,6 +45,11 @@ namespace Ocelot.Demo.Api2.Controllers
                 return NotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             // get the max value from poi
             var maxPoiId = CitiesDataStore.Instance.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
 
