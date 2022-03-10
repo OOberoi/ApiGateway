@@ -7,6 +7,8 @@ namespace Ocelot.Demo.Api2.Models
         [Required ]
         [MaxLength(50)]
         public string Name { get; set; } = string.Empty;
+
+        [MaxLength(250)]
         public string? Description { get; set; }
 
 
