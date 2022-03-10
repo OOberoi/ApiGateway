@@ -45,6 +45,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 return NotFound();
             }
 
+            // This block of code can be removed if you want an explicit error description defined in data validation
             if (!ModelState.IsValid)
             {
                 return BadRequest();
