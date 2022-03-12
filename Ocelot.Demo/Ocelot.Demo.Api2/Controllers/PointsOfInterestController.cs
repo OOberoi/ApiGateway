@@ -13,7 +13,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
-            { 
+            {
                 return NotFound();
             }
             return Ok(city.PointsOfInterest);
@@ -31,14 +31,14 @@ namespace Ocelot.Demo.Api2.Controllers
             // pont of interest
             var poi = city.PointsOfInterest.FirstOrDefault(p => p.Id == poiId);
             if (poi == null)
-            { 
+            {
                 return NotFound();
             }
             return Ok(poi);
         }
         [HttpPost]
         public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
-        { 
+        {
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
             {
@@ -69,7 +69,13 @@ namespace Ocelot.Demo.Api2.Controllers
                     cityId = cityId,
                     pointOfInterestId = pointOfInterest.Id
                 },
-                pointOfInterest);              
+                pointOfInterest);
+        }
+
+        [HttpPut("{pointofinterestid}")]
+        public ActionResult UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
+        { 
+            
         }
     }
 }
