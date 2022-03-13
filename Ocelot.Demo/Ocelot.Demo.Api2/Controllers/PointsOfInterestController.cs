@@ -85,9 +85,10 @@ namespace Ocelot.Demo.Api2.Controllers
             // Look for Point Of Interest
             var pointOfIntFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == pointOfInterestId);
             if (pointOfIntFromStore == null)
-            { 
-
+            {
+                return NotFound();
             }
+
         }
     }
 }
