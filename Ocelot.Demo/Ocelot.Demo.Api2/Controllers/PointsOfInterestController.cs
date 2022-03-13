@@ -80,7 +80,7 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 return NotFound();
             }
-            return Ok(city);
+            
 
             // Look for Point Of Interest
             var pointOfIntFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == pointOfInterestId);
@@ -88,7 +88,7 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 return NotFound();
             }
-
+            return Ok(pointOfIntFromStore);
         }
     }
 }
