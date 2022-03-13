@@ -91,7 +91,7 @@ namespace Ocelot.Demo.Api2.Controllers
             pointOfIntFromStore.Name = pointOfInterest.Name;
             pointOfIntFromStore.Description = pointOfInterest.Description;
 
-            // This will still return status code 202, albeit with no content
+            // This will still return status code 204, albeit with no content
             return NoContent();
         }
     }
