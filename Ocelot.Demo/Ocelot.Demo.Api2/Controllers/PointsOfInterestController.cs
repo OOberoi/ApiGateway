@@ -75,7 +75,8 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpPut("{pointofinterestid}")]
         public ActionResult UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
         { 
-            
+            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId); 
+
         }
     }
 }
