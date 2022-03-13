@@ -88,7 +88,10 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 return NotFound();
             }
-            return Ok(pointOfIntFromStore);
+            pointOfIntFromStore.Name = pointOfInterest.Name;
+            pointOfIntFromStore.Description = pointOfInterest.Description;
+
+            return NoContent();
         }
     }
 }
