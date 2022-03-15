@@ -103,6 +103,18 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 return NotFound();
             }
+
+            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
+            if (pointOfInterestFromStore == null)
+            {
+                return NotFound();
+            }
+
+            var pointOfInterestToPatch = new PointOfInterestForUpdateDto()
+            { 
+                 Name =pointOfInterestFromStore.Name,
+                 Description = pointOfInterestFromStore.Description
+            };
         }
     }
 }
