@@ -133,7 +133,13 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpDelete("{pointOfInterestId}")]
         public ActionResult DeletePointOfInterest(int cityId, int pointOfInterestId)
         { 
-        
+            var city = CitiesDataStore.Instance.Cities.FirstOrDefault( c => c.Id == cityId);
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+
         }
     }
 }
