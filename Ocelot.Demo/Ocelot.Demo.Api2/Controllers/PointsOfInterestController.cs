@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Ocelot.Demo.Api2.Models;
 
@@ -94,9 +95,14 @@ namespace Ocelot.Demo.Api2.Controllers
             return NoContent();
         }
 
-        public ActionResult PartiallyUpdatePointOfInterest()
+        public ActionResult PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId, 
+                                                            JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
         { 
-        
+            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId);
+            if (city == null)
+            {
+                return NotFound();
+            }
         }
     }
 }
