@@ -95,6 +95,7 @@ namespace Ocelot.Demo.Api2.Controllers
             return NoContent();
         }
 
+        [HttpPatch("{pointofinterestid}")]
         public ActionResult PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId, 
                                                             JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
         { 
@@ -128,6 +129,8 @@ namespace Ocelot.Demo.Api2.Controllers
             // Return 204 NoContent
             return NoContent();
         }
+
+
     }
 }
 
