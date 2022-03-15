@@ -59,7 +59,7 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 Id = ++maxPoiId,
                 Name = poi.Name,
-                Description = poi.Description
+                Description = poi.Description 
             };
 
             city.PointsOfInterest.Add(pointOfInterest);
@@ -125,6 +125,7 @@ namespace Ocelot.Demo.Api2.Controllers
             pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
             pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
 
+            // Return 204 NoContent
             return NoContent();
         }
     }
