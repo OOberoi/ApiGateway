@@ -115,7 +115,12 @@ namespace Ocelot.Demo.Api2.Controllers
                  Name =pointOfInterestFromStore.Name,
                  Description = pointOfInterestFromStore.Description
             };
-            patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);  
+            patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
+            // Check if the ModelState is valid
+            if (!ModelState.IsValid)
+            { 
+                return BadRequest(ModelState);
+            }
         }
     }
 }
