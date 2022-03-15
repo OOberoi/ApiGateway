@@ -130,7 +130,11 @@ namespace Ocelot.Demo.Api2.Controllers
             return NoContent();
         }
 
-
+        [HttpDelete("{pointOfInterestId}")]
+        public ActionResult DeletePointOfInterest(int cityId, int pointOfInterestId)
+        { 
+        
+        }
     }
 }
 
