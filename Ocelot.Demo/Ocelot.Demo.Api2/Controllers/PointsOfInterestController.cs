@@ -121,6 +121,11 @@ namespace Ocelot.Demo.Api2.Controllers
             { 
                 return BadRequest(ModelState);
             }
+
+            pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
+            pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
+
+            return NoContent();
         }
     }
 }
