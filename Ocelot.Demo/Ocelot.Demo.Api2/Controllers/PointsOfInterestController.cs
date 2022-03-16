@@ -145,6 +145,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 return NotFound();
             }
             city.PointsOfInterest.Remove(pointOfInterestFromStore);
+            // Return 204 NoContent
             return NoContent();
         }
     }
