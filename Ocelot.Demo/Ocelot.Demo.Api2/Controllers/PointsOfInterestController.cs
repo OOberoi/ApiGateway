@@ -21,6 +21,7 @@ namespace Ocelot.Demo.Api2.Controllers
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
             {
+                _logger.LogInformation($"City with id {cityId} was not found when accessing points of interest!");
                 return NotFound();
             }
             return Ok(city.PointsOfInterest);
