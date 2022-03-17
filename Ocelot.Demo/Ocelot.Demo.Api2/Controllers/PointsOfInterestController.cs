@@ -12,7 +12,7 @@ namespace Ocelot.Demo.Api2.Controllers
         private readonly ILogger<PointsOfInterestController> _logger;
         public PointsOfInterestController(ILogger<PointsOfInterestController> logger)
         {
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpGet()]
