@@ -9,6 +9,10 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class PointsOfInterestController : ControllerBase
     {
+        public PointsOfInterestController()
+        {
+
+        }
         [HttpGet()]
         public ActionResult<IEnumerable<PointOfInterestDto>> GetPointsOfInterest(int cityId)
         {
