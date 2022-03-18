@@ -18,13 +18,22 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpGet()]
         public ActionResult<IEnumerable<PointOfInterestDto>> GetPointsOfInterest(int cityId)
         {
-            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
+            try
             {
-                _logger.LogInformation($"City with id {cityId} was not found when accessing points of interest!");
-                return NotFound();
+                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                if (city == null)
+                {
+                    _logger.LogInformation($"City with id {cityId} was not found when accessing points of interest!");
+                    return NotFound();
+                }
+                return Ok(city.PointsOfInterest);
+
             }
-            return Ok(city.PointsOfInterest);
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         [HttpGet("{poiId}", Name = "GetPointOfInterest")]
