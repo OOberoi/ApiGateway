@@ -44,9 +44,6 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-            }
-            catch (Exception ex)
-            {
                 var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
@@ -61,8 +58,11 @@ namespace Ocelot.Demo.Api2.Controllers
                 }
                 return Ok(poi);
             }
-
-            
+            catch (Exception ex)
+            {
+                _logger.LogCritical("An error occured while getting point of interest with id {poiId}!", ex);
+                return StatusCode(500, "An error occured while handling your request!");
+            }
         }
         [HttpPost]
         public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
