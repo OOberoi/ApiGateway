@@ -20,6 +20,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
+                throw new Exception("Unexplained error!");
                 var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
