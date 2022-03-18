@@ -31,7 +31,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                _logger.LogCritical("An error occured while getting points of interest!");
             }
             
         }
