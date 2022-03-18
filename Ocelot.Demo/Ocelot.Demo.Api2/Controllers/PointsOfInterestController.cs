@@ -46,22 +46,23 @@ namespace Ocelot.Demo.Api2.Controllers
             {
             }
             catch (Exception ex)
-            { 
+            {
+                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                if (city == null)
+                {
+                    return NotFound();
+                }
+
+                // pont of interest
+                var poi = city.PointsOfInterest.FirstOrDefault(p => p.Id == poiId);
+                if (poi == null)
+                {
+                    return NotFound();
+                }
+                return Ok(poi);
             }
 
-            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
-            {
-                return NotFound();
-            }
-
-            // pont of interest
-            var poi = city.PointsOfInterest.FirstOrDefault(p => p.Id == poiId);
-            if (poi == null)
-            {
-                return NotFound();
-            }
-            return Ok(poi);
+            
         }
         [HttpPost]
         public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
