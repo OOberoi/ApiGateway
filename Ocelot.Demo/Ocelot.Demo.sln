@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot.Demo", "Ocelot.Demo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot.Demo.Api", "Ocelot.Demo.Api\Ocelot.Demo.Api.csproj", "{3FE395FB-E404-4F44-B54E-0D36873778EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot.Demo.Api2", "Ocelot.Demo.Api2\Ocelot.Demo.Api2.csproj", "{98DFE262-99D5-43E2-A846-7FB6FB60B51D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot.Demo.Api2", "Ocelot.Demo.Api2\Ocelot.Demo.Api2.csproj", "{98DFE262-99D5-43E2-A846-7FB6FB60B51D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
