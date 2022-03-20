@@ -68,6 +68,15 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpPost]
         public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
         {
+            try
+            {
+
+            }
+
+            catch (Exception ex)
+            { 
+            
+            }
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
             if (city == null)
             {
