@@ -104,8 +104,9 @@ namespace Ocelot.Demo.Api2.Controllers
             }
 
             catch (Exception ex)
-            { 
-            
+            {
+                _logger.LogCritical("An error occured while creating point of interest!", ex);
+                return StatusCode(500, "An error occured while handling your request!");
             }
             
         }
