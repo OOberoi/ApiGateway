@@ -70,44 +70,44 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
+                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                if (city == null)
+                {
+                    return NotFound();
+                }
 
+                // This block of code can be removed if you want an explicit error description defined in data validation
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
+
+                // get the max value from poi
+                var maxPoiId = CitiesDataStore.Instance.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
+
+                var pointOfInterest = new PointOfInterestDto()
+                {
+                    Id = ++maxPoiId,
+                    Name = poi.Name,
+                    Description = poi.Description
+                };
+
+                city.PointsOfInterest.Add(pointOfInterest);
+
+                return CreatedAtRoute("GetPointOfInterest",
+                    new
+                    {
+                        cityId = cityId,
+                        pointOfInterestId = pointOfInterest.Id
+                    },
+                    pointOfInterest);
             }
 
             catch (Exception ex)
             { 
             
             }
-            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
-            if (city == null)
-            {
-                return NotFound();
-            }
-
-            // This block of code can be removed if you want an explicit error description defined in data validation
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
-            // get the max value from poi
-            var maxPoiId = CitiesDataStore.Instance.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
-
-            var pointOfInterest = new PointOfInterestDto()
-            {
-                Id = ++maxPoiId,
-                Name = poi.Name,
-                Description = poi.Description 
-            };
-
-            city.PointsOfInterest.Add(pointOfInterest);
-
-            return CreatedAtRoute("GetPointOfInterest",
-                new
-                {
-                    cityId = cityId,
-                    pointOfInterestId = pointOfInterest.Id
-                },
-                pointOfInterest);
+            
         }
 
         [HttpPut("{pointofinterestid}")]
