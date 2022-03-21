@@ -139,42 +139,42 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
+                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId);
+                if (city == null)
+                {
+                    return NotFound();
+                }
 
+                var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
+                if (pointOfInterestFromStore == null)
+                {
+                    return NotFound();
+                }
+
+                var pointOfInterestToPatch = new PointOfInterestForUpdateDto()
+                {
+                    Name = pointOfInterestFromStore.Name,
+                    Description = pointOfInterestFromStore.Description
+                };
+                patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
+                // Check if the ModelState is valid
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
+                pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
+
+                // Return 204 NoContent
+                return NoContent();
             }
 
             catch (Exception ex)
             { 
+                
+            }
             
-            }
-            var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId);
-            if (city == null)
-            {
-                return NotFound();
-            }
-
-            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
-            if (pointOfInterestFromStore == null)
-            {
-                return NotFound();
-            }
-
-            var pointOfInterestToPatch = new PointOfInterestForUpdateDto()
-            { 
-                 Name =pointOfInterestFromStore.Name,
-                 Description = pointOfInterestFromStore.Description
-            };
-            patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
-            // Check if the ModelState is valid
-            if (!ModelState.IsValid)
-            { 
-                return BadRequest(ModelState);
-            }
-
-            pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
-            pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
-
-            // Return 204 NoContent
-            return NoContent();
         }
 
         [HttpDelete("{pointOfInterestId}")]
