@@ -136,7 +136,16 @@ namespace Ocelot.Demo.Api2.Controllers
         [HttpPatch("{pointofinterestid}")]
         public ActionResult PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId, 
                                                             JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
-        { 
+        {
+            try
+            {
+
+            }
+
+            catch (Exception ex)
+            { 
+            
+            }
             var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId);
             if (city == null)
             {
