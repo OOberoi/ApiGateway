@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
+builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddControllers(options =>
