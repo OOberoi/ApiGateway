@@ -214,8 +214,9 @@ namespace Ocelot.Demo.Api2.Controllers
             }
 
             catch (Exception ex)
-            { 
-            
+            {
+                _logger.LogCritical("An error occured while updating the point of interest!", ex);
+
             }
             
         }
