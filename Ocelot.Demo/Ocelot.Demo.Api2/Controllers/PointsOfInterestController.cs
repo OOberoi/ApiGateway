@@ -193,22 +193,31 @@ namespace Ocelot.Demo.Api2.Controllers
 
         [HttpDelete("{pointOfInterestId}")]
         public ActionResult DeletePointOfInterest(int cityId, int pointOfInterestId)
-        { 
-            var city = CitiesDataStore.Instance.Cities.FirstOrDefault( c => c.Id == cityId);
-            if (city == null)
+        {
+            try
             {
-                return NotFound();
+                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                if (city == null)
+                {
+                    return NotFound();
+                }
+
+                var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
+                if (pointOfInterestFromStore == null)
+
+                {
+                    return NotFound();
+                }
+                city.PointsOfInterest.Remove(pointOfInterestFromStore);
+                // Return 204 NoContent
+                return NoContent();
             }
 
-            var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault( c => c.Id==pointOfInterestId);
-            if (pointOfInterestFromStore == null)
-
-            {
-                return NotFound();
+            catch (Exception ex)
+            { 
+            
             }
-            city.PointsOfInterest.Remove(pointOfInterestFromStore);
-            // Return 204 NoContent
-            return NoContent();
+            
         }
     }
 }
