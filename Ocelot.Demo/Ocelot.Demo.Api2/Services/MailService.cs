@@ -3,8 +3,14 @@
     public class MailService
     {
         private string _mailTo = "obi@eOberoi.com";
-        private string _subject = "Testing";
         public string _mailFrom = "noreply@eOberoi.com";
+
+        public void Send(string subject, string message)
+        {
+            Console.WriteLine($"Mail from {_mailTo} to {_mailTo}, with {nameof(MailService)}.");
+            Console.WriteLine($"Subject: {subject}");
+            Console.WriteLine($"Message: {message}");
+        }
 
     }
 }
