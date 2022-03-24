@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.StaticFiles;
 using Serilog;
+using Ocelot.Demo.Api2.Services;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -25,7 +26,9 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
-builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+builder.Services.AddSingleton<MailService>();
+
+builder.Services.AddTransient<FileExtensionContentTypeProvider>();
 
 var app = builder.Build();
 
