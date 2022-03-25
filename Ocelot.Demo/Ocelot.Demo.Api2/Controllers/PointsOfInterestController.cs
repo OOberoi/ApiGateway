@@ -162,6 +162,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
                 if (pointOfInterestFromStore == null)
                 {
+                    _logger.LogCritical($"Point of interest could not be retrieved with id {pointOfInterestId}");
                     return NotFound();
                 }
 
