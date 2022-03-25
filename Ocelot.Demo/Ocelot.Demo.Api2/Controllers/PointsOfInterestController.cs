@@ -105,9 +105,8 @@ namespace Ocelot.Demo.Api2.Controllers
                         cityId = cityId,
                         pointOfInterestId = pointOfInterest.Id
                     },
-                    pointOfInterest);
+                   pointOfInterest);
             }
-
             catch (Exception ex)
             {
                 _logger.LogCritical("An error occured while creating point of interest!", ex);
@@ -139,7 +138,6 @@ namespace Ocelot.Demo.Api2.Controllers
 
                 // This will still return status code 204, albeit with no content
                 return NoContent();
-
             }
 
             catch (Exception ex)
@@ -192,7 +190,8 @@ namespace Ocelot.Demo.Api2.Controllers
             catch (Exception ex)
             {
                 _logger.LogCritical("An error occured while updating the point of interest!", ex);
-                return StatusCode(500, "An error occured while handling your request!");            }
+                return StatusCode(500, "An error occured while handling your request!");            
+            }
             
         }
 
@@ -215,20 +214,18 @@ namespace Ocelot.Demo.Api2.Controllers
                     return NotFound();
                 }
                 city.PointsOfInterest.Remove(pointOfInterestFromStore);
-                _mailService.Send("Testing", "Howdy Obi@");
+                _mailService.Send("Point of interest is deleted",
+                    $"{pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was successfully deleted!");
 
                 // Return 204 NoContent
                 return NoContent();
             }
-
             catch (Exception ex)
             {
                 _logger.LogCritical("An error occured while updating the point of interest!", ex);
                 return StatusCode(500, "An error occured while handling your request!");
             }
-        }
-            
-        }
+        }           
     }
 }
 
