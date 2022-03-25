@@ -13,9 +13,10 @@ namespace Ocelot.Demo.Api2.Controllers
         private readonly ILogger<PointsOfInterestController> _logger;
         private readonly MailService _mailService;
 
-        public PointsOfInterestController(ILogger<PointsOfInterestController> logger)
+        public PointsOfInterestController(ILogger<PointsOfInterestController> logger, MailService mailService)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
         }
 
         [HttpGet()]
