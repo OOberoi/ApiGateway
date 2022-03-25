@@ -28,6 +28,7 @@ builder.Services.AddSwaggerGen();
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
 builder.Services.AddSingleton<MailService>();
 
+// inject the mail service via dependency injection
 builder.Services.AddTransient<FileExtensionContentTypeProvider>();
 
 var app = builder.Build();
