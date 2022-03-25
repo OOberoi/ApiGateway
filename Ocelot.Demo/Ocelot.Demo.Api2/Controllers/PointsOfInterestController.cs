@@ -215,6 +215,8 @@ namespace Ocelot.Demo.Api2.Controllers
                     return NotFound();
                 }
                 city.PointsOfInterest.Remove(pointOfInterestFromStore);
+                _mailService.Send("Testing", "Howdy Obi@");
+
                 // Return 204 NoContent
                 return NoContent();
             }
