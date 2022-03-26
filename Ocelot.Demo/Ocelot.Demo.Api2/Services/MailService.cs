@@ -1,6 +1,6 @@
 ﻿namespace Ocelot.Demo.Api2.Services
 {
-    public class MailService
+    public class MailService : IMailService
     {
         private string _mailTo = "obi@eOberoi.com";
         public string _mailFrom = "noreply@eOberoi.com";
