@@ -59,6 +59,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 var poi = city.PointsOfInterest.FirstOrDefault(p => p.Id == poiId);
                 if (poi == null)
                 {
+                    _logger.LogInformation($"Point of interest with id {poiId} was not found!");
                     return NotFound();
                 }
                 return Ok(poi);
