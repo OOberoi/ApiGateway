@@ -29,7 +29,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<MailService>();
 
 // inject the mail service via dependency injection
-builder.Services.AddTransient<FileExtensionContentTypeProvider>();
+builder.Services.AddTransient<MailService>();
 
 var app = builder.Build();
 
