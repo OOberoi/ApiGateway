@@ -29,8 +29,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<MailService>();
 
 // inject the mail service via dependency injection
+#if DEBUG
 builder.Services.AddTransient<IMailService, MailService>();
-
+#else
+builder.Services.AddTransient<IMailService, CloudMailService>();
+#endif
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
