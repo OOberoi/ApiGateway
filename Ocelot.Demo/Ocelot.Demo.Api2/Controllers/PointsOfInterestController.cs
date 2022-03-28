@@ -27,8 +27,8 @@ namespace Ocelot.Demo.Api2.Controllers
             try
             {
                 //throw new Exception("Unexplained error!");
-
-                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                //todo: this needs fixing...3/27 - replace instance with _cityDataStore
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
                     _logger.LogInformation($"City with id {cityId} was not found when accessing points of interest!");
@@ -50,7 +50,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
                     _logger.LogInformation($"Point of interest with id {poiId} was not found!");
@@ -77,7 +77,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
                     _logger.LogCritical($"Point of interest could not be created with id {cityId}" );
@@ -123,7 +123,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId);
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id != cityId);
                 if (city == null)
                 {
                     _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
@@ -157,7 +157,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id != cityId);
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id != cityId);
                 if (city == null)
                 {
                     _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
@@ -203,7 +203,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                var city = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == cityId);
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
                     _logger.LogCritical($"Point of interest could not be updated with id {cityId}");

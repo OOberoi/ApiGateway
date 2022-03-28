@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.StaticFiles;
 using Serilog;
 using Ocelot.Demo.Api2.Services;
+using Ocelot.Demo.Api2;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -36,6 +37,8 @@ builder.Services.AddTransient<IMailService, MailService>();
 #else
 builder.Services.AddTransient<IMailService, CloudMailService>();
 #endif
+
+builder.Services.AddSingleton<CitiesDataStore>();
 
 var app = builder.Build();
 
