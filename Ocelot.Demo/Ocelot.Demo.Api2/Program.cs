@@ -25,6 +25,8 @@ builder.Services.AddControllers(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
+
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
 builder.Services.AddSingleton<MailService>();
 
