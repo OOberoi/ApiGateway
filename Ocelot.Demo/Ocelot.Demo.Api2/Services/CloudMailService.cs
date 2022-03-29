@@ -2,8 +2,8 @@
 {
     public class CloudMailService : IMailService
     {
-        private string _mailTo = "obi@eOberoi.com";
-        public string _mailFrom = "noreply@eOberoi.com";
+        private readonly string _mailTo = String.Empty;
+        public readonly string _mailFrom = String.Empty;
 
         public CloudMailService(IConfiguration configuration)
         {
