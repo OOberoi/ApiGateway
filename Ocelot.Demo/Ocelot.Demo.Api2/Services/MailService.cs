@@ -2,8 +2,9 @@
 {
     public class MailService : IMailService
     {
-        private string _mailTo = "obi@eOberoi.com";
-        public string _mailFrom = "noreply@eOberoi.com";
+        
+        private string _mailTo = String.Empty;
+        public string _mailFrom = String.Empty;
 
         public MailService(IConfiguration configuration)
         {
