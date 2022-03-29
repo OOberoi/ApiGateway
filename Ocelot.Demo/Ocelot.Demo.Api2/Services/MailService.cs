@@ -5,9 +5,10 @@
         private string _mailTo = "obi@eOberoi.com";
         public string _mailFrom = "noreply@eOberoi.com";
 
-        public MailService()
+        public MailService(IConfiguration configuration)
         {
-
+            _mailTo = configuration["mailSettings:mailToAddress"];
+            _mailFrom = configuration["mailSettings:MailFromAddress"];
         }
 
         public void Send(string subject, string message)
