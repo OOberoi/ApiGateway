@@ -91,7 +91,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 }
 
                 // get the max value from poi
-                var maxPoiId = CitiesDataStore.Instance.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
+                var maxPoiId = _cityDataStore.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
 
                 var pointOfInterest = new PointOfInterestDto()
                 {
