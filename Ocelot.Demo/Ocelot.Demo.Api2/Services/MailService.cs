@@ -3,8 +3,8 @@
     public class MailService : IMailService
     {
         
-        private string _mailTo = String.Empty;
-        public string _mailFrom = String.Empty;
+        private readonly string _mailTo = String.Empty;
+        public readonly string _mailFrom = String.Empty;
 
         public MailService(IConfiguration configuration)
         {
