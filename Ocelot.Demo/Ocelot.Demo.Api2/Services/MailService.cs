@@ -5,6 +5,11 @@
         private string _mailTo = "obi@eOberoi.com";
         public string _mailFrom = "noreply@eOberoi.com";
 
+        public MailService()
+        {
+
+        }
+
         public void Send(string subject, string message)
         {
             Console.WriteLine($"Mail from {_mailTo} to {_mailTo}, with {nameof(MailService)}.");
