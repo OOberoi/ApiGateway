@@ -9,5 +9,10 @@ namespace Ocelot.Demo.Api2.Entities
         public string? Description { get; set; }
 
         public ICollection<PointOfInterest> PointsOfInterest { get; set; } = new List<PointOfInterest>();
+
+        public City(string name)
+        {
+            Name = name;
+        }
     }
 }
