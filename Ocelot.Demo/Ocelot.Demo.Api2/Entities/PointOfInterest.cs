@@ -10,5 +10,9 @@ namespace Ocelot.Demo.Api2.Entities
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public PointOfInterest(string name)
+        {
+            Name = name;
+        }
     }
 }
