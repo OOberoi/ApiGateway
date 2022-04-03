@@ -9,7 +9,9 @@ namespace Ocelot.Demo.Api2.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
+        [ForeignKey("CityId")]
         public City? City { get; set; }
+
         public int CityId { get; set; }
 
 
