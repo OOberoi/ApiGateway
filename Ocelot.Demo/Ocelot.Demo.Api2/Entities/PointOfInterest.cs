@@ -9,7 +9,7 @@ namespace Ocelot.Demo.Api2.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        public City City { get; set; }
+        public City? City { get; set; }
 
 
         public PointOfInterest(string name)
