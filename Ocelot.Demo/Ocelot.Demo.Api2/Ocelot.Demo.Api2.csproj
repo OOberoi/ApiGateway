@@ -23,8 +23,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DB Context\" />
-  </ItemGroup>
-
 </Project>
