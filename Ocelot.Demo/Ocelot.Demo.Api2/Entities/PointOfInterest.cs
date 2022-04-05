@@ -10,7 +10,7 @@ namespace Ocelot.Demo.Api2.Entities
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(25)]
         public string Name { get; set; }
         [ForeignKey("CityId")]
         public City? City { get; set; }
