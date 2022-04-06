@@ -10,7 +10,15 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         public ActionResult<IEnumerable<CityDto>> GetCities()
         {
-            return Ok(CitiesDataStore.Instance.Cities);
+            try
+            {
+                return Ok(CitiesDataStore.Instance.Cities);
+            }
+            catch (Exception ex)
+            { 
+            
+            }
+            
         }
 
 
