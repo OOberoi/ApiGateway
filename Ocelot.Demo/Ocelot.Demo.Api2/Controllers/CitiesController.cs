@@ -15,8 +15,10 @@ namespace Ocelot.Demo.Api2.Controllers
                 return Ok(CitiesDataStore.Instance.Cities);
             }
             catch (Exception ex)
-            { 
-            
+            {
+                return BadRequest(ex.Message);
+                throw ex;
+                
             }
             
         }
