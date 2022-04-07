@@ -3,6 +3,8 @@ using Serilog;
 using Ocelot.Demo.Api2.Services;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -28,7 +30,7 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
-builder.Services.AddDbContext<CityInfoContext>();
+builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOptions.UseSqlServer("CityInfoDB"));
 
 
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
