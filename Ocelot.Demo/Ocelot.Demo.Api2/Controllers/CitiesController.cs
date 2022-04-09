@@ -17,7 +17,7 @@ namespace Ocelot.Demo.Api2.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-                throw ex;
+                //throw ex;
                 
             }
             

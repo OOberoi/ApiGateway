@@ -22,6 +22,19 @@ namespace Ocelot.Demo.Api2.DB_Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<City>()
+                .HasData(new City("Toronto")
+                { 
+                    Description = "City known for CN Tower"
+                },
+                new City("Mumbai")
+                { 
+                Description = "City known for Bollywood"
+                },
+                new City("Delhi")
+                { 
+                    Description= "City known for rich culture and diversity"
+                }
             base.OnModelCreating(modelBuilder);
         }
     }
