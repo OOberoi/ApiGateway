@@ -34,6 +34,10 @@ namespace Ocelot.Demo.Api2.DB_Context
                 new City("Delhi")
                 {
                     Description = "City known for rich culture and diversity"
+                },
+                new City("New York")
+                { 
+                    Description = "Fashion and Financial capital"
                 });
             base.OnModelCreating(modelBuilder);
         }
