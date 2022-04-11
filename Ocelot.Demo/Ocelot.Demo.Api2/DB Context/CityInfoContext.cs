@@ -38,7 +38,12 @@ namespace Ocelot.Demo.Api2.DB_Context
                 new City("New York")
                 { 
                     Description = "Fashion and Financial capital"
-                });
+                },
+                new City("Paris")
+                {
+                    Description = "Fashion capital"
+                }
+                );
             base.OnModelCreating(modelBuilder);
         }
     }
