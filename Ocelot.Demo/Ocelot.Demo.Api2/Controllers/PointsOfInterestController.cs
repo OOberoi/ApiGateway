@@ -205,7 +205,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
                 if (city == null)
                 {
-                    _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
+                    _logger.LogCritical($"Point of interest could not be deleted with id {cityId}");
                     return NotFound();
                 }
 
