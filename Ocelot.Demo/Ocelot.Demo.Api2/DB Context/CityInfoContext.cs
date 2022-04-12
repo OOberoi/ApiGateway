@@ -25,7 +25,7 @@ namespace Ocelot.Demo.Api2.DB_Context
             modelBuilder.Entity<City>()
                 .HasData(new City("Toronto")
                 {
-                    Id= 1,
+                    Id = 1,
                     Description = "City known for CN Tower"
                 },
                 new City("Mumbai")
@@ -40,12 +40,12 @@ namespace Ocelot.Demo.Api2.DB_Context
                 },
                 new City("New York")
                 { 
-                    Id=4,
+                    Id = 4,
                     Description = "Fashion and Financial capital"
                 },
                 new City("Paris")
                 {
-                    Id=5,
+                    Id = 5,
                     Description = "Fashion capital"
                 }
                 );
