@@ -25,22 +25,27 @@ namespace Ocelot.Demo.Api2.DB_Context
             modelBuilder.Entity<City>()
                 .HasData(new City("Toronto")
                 {
+                    Id= 1,
                     Description = "City known for CN Tower"
                 },
                 new City("Mumbai")
                 {
+                    Id = 2,
                     Description = "City known for Bollywood"
                 },
                 new City("Delhi")
                 {
+                    Id = 3,
                     Description = "City known for rich culture and diversity"
                 },
                 new City("New York")
                 { 
+                    Id=4,
                     Description = "Fashion and Financial capital"
                 },
                 new City("Paris")
                 {
+                    Id=5,
                     Description = "Fashion capital"
                 }
                 );
