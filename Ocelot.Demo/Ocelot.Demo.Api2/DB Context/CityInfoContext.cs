@@ -61,7 +61,14 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Id = 2,
                     CityId = 1,
                     Description = "A city surrounded by the lake"
+                },
+                new PointOfInterest("Taj Hotel")
+                {
+                    Id = 3,
+                    CityId = 2,
+                    Description = "An iconic hotel and pride of India"
                 });
+                
             base.OnModelCreating(modelBuilder);
         }
     }
