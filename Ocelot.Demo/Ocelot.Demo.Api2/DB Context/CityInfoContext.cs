@@ -67,7 +67,8 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Id = 3,
                     CityId = 2,
                     Description = "An iconic hotel and pride of India"
-                });
+                },
+                new PointOfInterest("");
                 
             base.OnModelCreating(modelBuilder);
         }
