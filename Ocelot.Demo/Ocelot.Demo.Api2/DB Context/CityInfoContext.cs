@@ -49,6 +49,19 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Description = "Fashion capital"
                 }
                 );
+            modelBuilder.Entity<PointOfInterest>()
+                .HasData(new PointOfInterest("CN Tower")
+                {
+                    Id = 1,
+                    CityId = 1,
+                    Description = "An incredible tower"
+                },
+                new PointOfInterest("Lake Ontario")
+                {
+                    Id = 2,
+                    CityId = 1,
+                    Description = "A city surrounded by the lake"
+                });
             base.OnModelCreating(modelBuilder);
         }
     }
