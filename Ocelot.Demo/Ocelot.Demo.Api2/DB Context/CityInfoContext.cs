@@ -79,6 +79,12 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Id=5,
                     CityId=4,
                     Description ="Iconic towers to replace twin towers"
+                },
+                new PointOfInterest("Guggenheim Museum")
+                { 
+                    Id=6,
+                    CityId= 4,
+                    Description= "An extraordinary Art Museum"
                 });
                 
                 
