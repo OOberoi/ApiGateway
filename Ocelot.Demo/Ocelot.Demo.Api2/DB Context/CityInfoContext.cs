@@ -73,6 +73,12 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Id=4,
                     CityId=3,
                     Description ="A historic monument"
+                },
+                new PointOfInterest("One World")
+                {
+                    Id=5,
+                    CityId=4,
+                    Description ="Iconic towers to replace twin towers"
                 });
                 
                 
