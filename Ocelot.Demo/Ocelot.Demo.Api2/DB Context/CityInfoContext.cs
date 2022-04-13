@@ -85,6 +85,12 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Id=6,
                     CityId= 4,
                     Description= "An extraordinary Art Museum"
+                },
+                new PointOfInterest("Eifel Tower")
+                { 
+                    Id=7,
+                    CityId=5,
+                    Description="An iconic French tower"
                 });
                 
                 
