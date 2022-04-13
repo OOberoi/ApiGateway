@@ -68,7 +68,13 @@ namespace Ocelot.Demo.Api2.DB_Context
                     CityId = 2,
                     Description = "An iconic hotel and pride of India"
                 },
-                new PointOfInterest("");
+                new PointOfInterest("Qutub Minar")
+                {
+                    Id=4,
+                    CityId=3,
+                    Description ="A historic monument"
+                });
+                
                 
             base.OnModelCreating(modelBuilder);
         }
