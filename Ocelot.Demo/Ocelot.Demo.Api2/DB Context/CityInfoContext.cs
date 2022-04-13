@@ -91,6 +91,12 @@ namespace Ocelot.Demo.Api2.DB_Context
                     Id=7,
                     CityId=5,
                     Description="An iconic French tower"
+                },
+                new PointOfInterest("The Louvre")
+                {
+                    Id = 8,
+                    CityId = 5,
+                    Description = "Attest the greatness of many civilizations"
                 });
                 
                 
