@@ -67,7 +67,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogCritical("An error occured while getting point of interest with id {poiId}!", ex);
+                _logger.LogCritical($"An error occured while getting point of interest with id {poiId}!", ex);
                 return StatusCode(500, "An error occured while handling your request!");
             }
         }
