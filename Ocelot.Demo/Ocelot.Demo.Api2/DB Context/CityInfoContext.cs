@@ -16,7 +16,7 @@ namespace Ocelot.Demo.Api2.DB_Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-9AB4882;Database=Ocelot.Demo.CityInfoDB;Trusted_Connection=true;");
+            //optionsBuilder.UseSqlServer("Server=DESKTOP-9AB4882;Database=Ocelot.Demo.CityInfoDB;Trusted_Connection=true;");
             base.OnConfiguring(optionsBuilder);
         }
 
