@@ -7,6 +7,6 @@ namespace Ocelot.Demo.Api2.Services
     {
         Task<IEnumerable<City>>GetCitiesAsync();
         Task<City?> GetCityAsync(int cityId);
-
+        Task<IEnumerable<PointOfInterest>> GetPointsOfInterestForCityAsync(int cityId);
     }
 }
