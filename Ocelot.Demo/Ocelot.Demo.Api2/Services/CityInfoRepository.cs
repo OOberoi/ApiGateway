@@ -14,7 +14,7 @@ namespace Ocelot.Demo.Api2.Services
         }
         public async Task<IEnumerable<City>> GetCitiesAsync()
         {
-            return await _cityInfoContext.Cities.ToListAsync();
+            return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
 
         public Task<City?> GetCityAsync(int cityId)
