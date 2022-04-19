@@ -5,10 +5,11 @@ namespace Ocelot.Demo.Api2.Services
 {
     public class CityInfoRepository : ICityInfoRepository
     {
+        private readonly CityInfoContext _cityInfoContext;
 
         public CityInfoRepository(CityInfoContext context)
         {
-
+            _cityInfoContext = context;
         }
         public Task<IEnumerable<City>> GetCitiesAsync()
         {
