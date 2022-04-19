@@ -9,7 +9,7 @@ namespace Ocelot.Demo.Api2.Services
 
         public CityInfoRepository(CityInfoContext context)
         {
-            _cityInfoContext = context;
+            _cityInfoContext = context ?? throw new ArgumentNullException(nameof(context));
         }
         public Task<IEnumerable<City>> GetCitiesAsync()
         {
