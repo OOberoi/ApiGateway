@@ -1,10 +1,12 @@
-﻿using Ocelot.Demo.Api2.Entities;
+﻿using Ocelot.Demo.Api2.DB_Context;
+using Ocelot.Demo.Api2.Entities;
 
 namespace Ocelot.Demo.Api2.Services
 {
     public class CityInfoRepository : ICityInfoRepository
     {
-        public CityInfoRepository()
+
+        public CityInfoRepository(CityInfoContext context)
         {
 
         }
