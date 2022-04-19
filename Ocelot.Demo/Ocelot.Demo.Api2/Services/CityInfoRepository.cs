@@ -22,9 +22,10 @@ namespace Ocelot.Demo.Api2.Services
             if (includesPointsOfInterest)
             {
                 return await _cityInfoContext.Cities.Include(c => c.PointsOfInterest)
-                    .Where(c => c.Id == cityId)
-                    .FirstOrDefaultAsync();
+                    .Where(c => c.Id == cityId).FirstOrDefaultAsync();
             }
+            return await _cityInfoContext.Cities
+                .Where(c => c.Id == cityId).FirstOrDefaultAsync();
         }
 
         public Task<PointOfInterest?> GetPointOfInterestForCityAsync(int cityId, int pointOfInterestId)
