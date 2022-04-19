@@ -4,6 +4,10 @@ namespace Ocelot.Demo.Api2.Services
 {
     public class CityInfoRepository : ICityInfoRepository
     {
+        public CityInfoRepository()
+        {
+
+        }
         public Task<IEnumerable<City>> GetCitiesAsync()
         {
             throw new NotImplementedException();
