@@ -1,4 +1,5 @@
-﻿using Ocelot.Demo.Api2.DB_Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Entities;
 
 namespace Ocelot.Demo.Api2.Services
@@ -11,9 +12,9 @@ namespace Ocelot.Demo.Api2.Services
         {
             _cityInfoContext = context ?? throw new ArgumentNullException(nameof(context));
         }
-        public Task<IEnumerable<City>> GetCitiesAsync()
+        public async Task<IEnumerable<City>> GetCitiesAsync()
         {
-            throw new NotImplementedException();
+            return await _cityInfoContext.Cities.ToListAsync();
         }
 
         public Task<City?> GetCityAsync(int cityId)
