@@ -34,9 +34,10 @@ namespace Ocelot.Demo.Api2.Services
                 .Where(p => p.CityId == cityId && p.Id == pointOfInterestId).FirstOrDefaultAsync();
         }
 
-        public Task<IEnumerable<PointOfInterest>> GetPointsOfInterestForCityAsync(int cityId)
+        public async Task<IEnumerable<PointOfInterest>> GetPointsOfInterestForCityAsync(int cityId)
         {
-            throw new NotImplementedException();
+            return await _cityInfoContext.PointOfInterests
+                .Where(p => p.CityId == cityId).ToListAsync();
         }
     }
 }
