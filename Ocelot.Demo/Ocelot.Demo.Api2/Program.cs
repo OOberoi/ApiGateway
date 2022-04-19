@@ -33,6 +33,7 @@ builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOptions.UseSqlServer(
     builder.Configuration["ConnectionStrings:CityInfoDBConnectionString"]));
 
+builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
 builder.Services.AddSingleton<MailService>();
