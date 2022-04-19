@@ -17,7 +17,7 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
 
-        public Task<City?> GetCityAsync(int cityId)
+        public Task<City?> GetCityAsync(int cityId, bool includesPointsOfInterest)
         {
             throw new NotImplementedException();
         }
