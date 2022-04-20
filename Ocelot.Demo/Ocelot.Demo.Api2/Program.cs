@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.StaticFiles;
-using Serilog;
-using Ocelot.Demo.Api2.Services;
+using Microsoft.EntityFrameworkCore;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Ocelot.Demo.Api2.Services;
+using Serilog;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
