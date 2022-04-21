@@ -14,17 +14,12 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
         }
-        public ActionResult<IEnumerable<CityDto>> GetCities()
+        
+        [HttpGet]
+        public async ActionResult<IEnumerable<CityDto>> GetCitiesAsync()
         {
-            try
-            {
-                return Ok(CitiesDataStore.Instance.Cities);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            
+            var cityEntities = await _cityInfoRepository.GetCitiesAsync();
+            return Ok(cityEntities);    
         }
 
 
