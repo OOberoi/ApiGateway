@@ -1,13 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Ocelot.Demo.Api2.Models;
+using Ocelot.Demo.Api2.Services;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
     [ApiController]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
-
     {
+        public CitiesController(ICityInfoRepository cityInfoRepository)
+        {
+
+        }
         public ActionResult<IEnumerable<CityDto>> GetCities()
         {
             try
@@ -17,8 +21,6 @@ namespace Ocelot.Demo.Api2.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-                //throw ex;
-                
             }
             
         }
