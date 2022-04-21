@@ -8,6 +8,8 @@ namespace Ocelot.Demo.Api2.Controllers
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
+        private readonly ICityInfoRepository _cityInfoRepository;
+
         public CitiesController(ICityInfoRepository cityInfoRepository)
         {
 
