@@ -12,7 +12,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
         public CitiesController(ICityInfoRepository cityInfoRepository)
         {
-            _cityInfoRepository = cityInfoRepository;
+            _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
         }
         public ActionResult<IEnumerable<CityDto>> GetCities()
         {
