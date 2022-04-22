@@ -5,6 +5,7 @@ using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
 using Serilog;
 
+
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
     .WriteTo.Console()
@@ -34,6 +35,8 @@ builder.Services.AddDbContext<CityInfoContext>(dbContextOptions => dbContextOpti
 
 // inject the CityRepo via dependency injection
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
 builder.Services.AddSingleton<MailService>();
