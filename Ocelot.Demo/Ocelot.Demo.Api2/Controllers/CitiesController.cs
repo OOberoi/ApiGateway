@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Ocelot.Demo.Api2.Models;
 using Ocelot.Demo.Api2.Services;
+using AutoMapper;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
@@ -9,10 +10,12 @@ namespace Ocelot.Demo.Api2.Controllers
     public class CitiesController : ControllerBase
     {
         private readonly ICityInfoRepository _cityInfoRepository;
+        private readonly IMapper _mapper;
 
-        public CitiesController(ICityInfoRepository cityInfoRepository)
+        public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
             _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
+            _mapper = mapper;
         }
         
         [HttpGet]
