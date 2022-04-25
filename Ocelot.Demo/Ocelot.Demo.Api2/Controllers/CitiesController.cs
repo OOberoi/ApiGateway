@@ -38,15 +38,15 @@ namespace Ocelot.Demo.Api2.Controllers
 
 
         [HttpGet("{id}")]
-        public ActionResult<CityDto> GetCity(int id, bool includePointsOfInterest = false)
+        public async Task<ActionResult<CityDto>> GetCityAsync(int id, bool includePointsOfInterest = false)
         { 
-            var cities = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == id);
+            var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest);
 
-            if (cities == null)
+            if (city == null)
             {
                 return NotFound();                
             }
-            return Ok(cities);
+            return Ok(city);
         }
         #region Redundant
         //public JsonResult GetCitiesOld()
