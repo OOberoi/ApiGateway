@@ -38,7 +38,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
 
         [HttpGet("{id}")]
-        public ActionResult<CityDto> GetCity(int id, bool include PointsOfInterest = false)
+        public ActionResult<CityDto> GetCity(int id, bool includePointsOfInterest = false)
         { 
             var cities = CitiesDataStore.Instance.Cities.FirstOrDefault(c => c.Id == id);
 
