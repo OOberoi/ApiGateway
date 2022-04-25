@@ -9,6 +9,7 @@ namespace Ocelot.Demo.Api2.Profiles
         public CityProfile()
         {
             CreateMap<City, CityWithoutPointsOfInterestDto>();
+            CreateMap<City, CityDto>();
         }
     }
 }
