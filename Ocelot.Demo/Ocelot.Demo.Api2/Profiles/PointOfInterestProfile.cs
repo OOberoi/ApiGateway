@@ -1,6 +1,8 @@
-﻿namespace Ocelot.Demo.Api2.Profiles
+﻿using AutoMapper;
+
+namespace Ocelot.Demo.Api2.Profiles
 {
-    public class PointOfInterestProfile
+    public class PointOfInterestProfile : Profile
     {
     }
 }
