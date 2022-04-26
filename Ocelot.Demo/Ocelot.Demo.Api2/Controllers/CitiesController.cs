@@ -38,7 +38,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CityDto>> GetCityAsync(int id, bool includePointsOfInterest = false)
+        public async Task<IActionResult> GetCityAsync(int id, bool includePointsOfInterest = false)
         { 
             var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest);
 
