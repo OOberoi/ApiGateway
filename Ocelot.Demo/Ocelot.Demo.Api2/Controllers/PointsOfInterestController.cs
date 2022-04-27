@@ -33,7 +33,13 @@ namespace Ocelot.Demo.Api2.Controllers
             try
             {
                 //throw new Exception("Unexplained error!");                
-               var pointsOfInterestForCity = await _cityInfoRepository.GetPointsOfInterestForCityAsync(cityId);
+                if (!await _cityInfoRepository.CityExistsAsync(cityId))
+                {
+                    _logger.LogInformation($"City with id {cityId} wasn't found when accessing points of interest.");
+                    return NotFound();
+                }
+                var pointsOfInterestForCity = await _cityInfoRepository.GetPointsOfInterestForCityAsync(cityId);
+                return Ok(_mapper.Map<IEnumerable<PointOfInterestDto>>(pointsOfInterestForCity)); 
 
             }
             catch (Exception ex)
