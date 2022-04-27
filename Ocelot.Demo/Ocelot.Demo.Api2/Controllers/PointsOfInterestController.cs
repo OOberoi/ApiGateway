@@ -8,17 +8,19 @@ namespace Ocelot.Demo.Api2.Controllers
 {
     [Route("api/cities/{cityId}/pointsofinterest")]
     [ApiController]
-    public class PointsOfInterestController : ControllerBase
+    public class PointsOfInterestController : ControllerBase 
     {
         private readonly ILogger<PointsOfInterestController> _logger;
         private readonly IMailService _mailService;
+        private readonly ICityInfoRepository _cityInfoRepository;
         private readonly CitiesDataStore _cityDataStore;
 
-        public PointsOfInterestController(ILogger<PointsOfInterestController> logger, IMailService mailService, CitiesDataStore cityDataStore)
+        public PointsOfInterestController(ILogger<PointsOfInterestController> logger, 
+            IMailService mailService, ICityInfoRepository cityInfoRepository)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
-            _cityDataStore = cityDataStore ?? throw new ArgumentNullException(nameof(cityDataStore));
+            _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
         }
 
         [HttpGet()]
