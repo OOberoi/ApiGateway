@@ -51,25 +51,23 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         [HttpGet("{poiId}", Name = "GetPointOfInterest")]
-        public ActionResult<PointOfInterestDto> GetPointOfInterest(int cityId, int poiId)
+        public async Task<ActionResult<PointOfInterestDto>> GetPointOfInterest(int cityId, int poiId)
         {
             try
             {
-                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-                if (city == null)
+                if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
-                    _logger.LogInformation($"Point of interest with id {poiId} was not found!");
                     return NotFound();
                 }
 
                 // pont of interest
-                var poi = city.PointsOfInterest.FirstOrDefault(p => p.Id == poiId);
+                var poi = await _cityInfoRepository.GetPointOfInterestForCityAsync(cityId, poiId);
                 if (poi == null)
                 {
                     _logger.LogInformation($"Point of interest with id {poiId} was not found!");
                     return NotFound();
                 }
-                return Ok(poi);
+                return Ok(_mapper.Map<PointOfInterestDto>(poi));
             }
             catch (Exception ex)
             {
