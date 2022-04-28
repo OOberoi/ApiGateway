@@ -23,17 +23,6 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             var cityEntities = await _cityInfoRepository.GetCitiesAsync();
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities));
-            //var results = new List<CityWithoutPointsOfInterestDto>();
-            //foreach (var cityEntity in cityEntities)
-            //{
-            //    results.Add(new CityWithoutPointsOfInterestDto
-            //    {
-            //        Id = cityEntity.Id,
-            //        Name = cityEntity.Name,
-            //        Description= cityEntity.Description
-            //    });
-            //}
-            //return Ok(results);    
         }
 
 
