@@ -17,6 +17,7 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
 
+        // AnyAsync will return true if a cityId is found and false otherwise
         public async Task<bool> CityExistsAsync(int cityId)
         { 
             return await _cityInfoContext.Cities.AnyAsync( c => c.Id == cityId);
