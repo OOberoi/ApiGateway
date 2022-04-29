@@ -36,6 +36,8 @@ namespace Ocelot.Demo.Api2.Controllers
                 return NotFound();                
             }
 
+            // If PointsOfInterest have to included, then map to CityDto, else map to 
+            // CityWithoutPointsOfInterestDto
             if (includePointsOfInterest)
             { 
                 return Ok(_mapper.Map<CityDto>(city));
