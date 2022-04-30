@@ -16,7 +16,8 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             _cityInfoRepository = cityInfoRepository ?? 
                 throw new ArgumentNullException(nameof(cityInfoRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _mapper = mapper ?? 
+                throw new ArgumentNullException(nameof(mapper));
         }
         
         [HttpGet]
