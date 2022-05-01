@@ -45,5 +45,11 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.PointOfInterests
                 .Where(p => p.CityId == cityId).ToListAsync();
         }
+
+        // Return true when one or more item in the entity are saved
+        public async Task<bool> SaveChangesAsync()
+        { 
+            return (await _cityInfoContext.SaveChangesAsync() >= 0);
+        }
     }
 }
