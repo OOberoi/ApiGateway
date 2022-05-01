@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Ocelot.Demo.Api2.Models;
 using Ocelot.Demo.Api2.Services;
+using Ocelot.Demo.Api2.Entities;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
@@ -79,7 +80,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
         [HttpPost]
-        public async ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
+        public async Task<ActionResult<PointOfInterestDto>> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
         {
             try
             {
@@ -88,11 +89,7 @@ namespace Ocelot.Demo.Api2.Controllers
                     return NotFound();
                 }
 
-                // This block of code can be removed if you want an explicit error description defined in data validation
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest();
-                }
+                var finalPOI = _mapper.Map<PointOfInterest>(poi);
 
                 // get the max value from poi
                 var maxPoiId = _cityDataStore.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
@@ -120,6 +117,15 @@ namespace Ocelot.Demo.Api2.Controllers
                 return StatusCode(500, "An error occured while handling your request!");
             }
 
+        }
+
+        public async Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest poi)
+        {
+            var city = await _cityInfoRepository.GetCityAsync(cityId, false);
+            if (city != null)
+            { 
+                city.PointsOfInterest.Add(poi);
+            }
         }
 
         //[HttpPut("{pointofinterestid}")]
