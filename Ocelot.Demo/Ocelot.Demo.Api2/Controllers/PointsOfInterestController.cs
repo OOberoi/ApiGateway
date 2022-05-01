@@ -91,25 +91,18 @@ namespace Ocelot.Demo.Api2.Controllers
 
                 var finalPOI = _mapper.Map<PointOfInterest>(poi);
 
-                // get the max value from poi
-                var maxPoiId = _cityDataStore.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
+                await _cityInfoRepository.AddPointOfInterestForCityAsync(cityId, finalPOI);
+                await _cityInfoRepository.SaveChangesAsync();
+                
+                var createPointOfInterestRetVal = _mapper.Map<PointOfInterestDto>(finalPOI);
 
-                var pointOfInterest = new PointOfInterestDto()
+                return CreatedAtRoute("GetPointOfInterest", new
                 {
-                    Id = ++maxPoiId,
-                    Name = poi.Name,
-                    Description = poi.Description
-                };
+                    cityId = cityId,
+                    id = createPointOfInterestRetVal.Id
+                },
+                createPointOfInterestRetVal);
 
-                city.PointsOfInterest.Add(pointOfInterest);
-
-                return CreatedAtRoute("GetPointOfInterest",
-                    new
-                    {
-                        cityId = cityId,
-                        pointOfInterestId = pointOfInterest.Id
-                    },
-                   pointOfInterest);
             }
             catch (Exception ex)
             {
