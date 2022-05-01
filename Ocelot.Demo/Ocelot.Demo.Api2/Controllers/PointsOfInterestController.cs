@@ -79,14 +79,12 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
         [HttpPost]
-        public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
+        public async ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
         {
             try
             {
-                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-                if (city == null)
+                if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
-                    _logger.LogCritical($"Point of interest could not be created with id {cityId}");
                     return NotFound();
                 }
 
