@@ -78,51 +78,51 @@ namespace Ocelot.Demo.Api2.Controllers
                 return StatusCode(500, "An error occured while handling your request!");
             }
         }
-        //[HttpPost]
-        //public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
-        //{
-        //    try
-        //    {
-        //        var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-        //        if (city == null)
-        //        {
-        //            _logger.LogCritical($"Point of interest could not be created with id {cityId}" );
-        //            return NotFound();
-        //        }
+        [HttpPost]
+        public ActionResult<PointOfInterestDto> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
+        {
+            try
+            {
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
+                if (city == null)
+                {
+                    _logger.LogCritical($"Point of interest could not be created with id {cityId}");
+                    return NotFound();
+                }
 
-        //        // This block of code can be removed if you want an explicit error description defined in data validation
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return BadRequest();
-        //        }
+                // This block of code can be removed if you want an explicit error description defined in data validation
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
 
-        //        // get the max value from poi
-        //        var maxPoiId = _cityDataStore.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
+                // get the max value from poi
+                var maxPoiId = _cityDataStore.Cities.SelectMany(c => c.PointsOfInterest).Max(p => p.Id);
 
-        //        var pointOfInterest = new PointOfInterestDto()
-        //        {
-        //            Id = ++maxPoiId,
-        //            Name = poi.Name,
-        //            Description = poi.Description
-        //        };
+                var pointOfInterest = new PointOfInterestDto()
+                {
+                    Id = ++maxPoiId,
+                    Name = poi.Name,
+                    Description = poi.Description
+                };
 
-        //        city.PointsOfInterest.Add(pointOfInterest);
+                city.PointsOfInterest.Add(pointOfInterest);
 
-        //        return CreatedAtRoute("GetPointOfInterest",
-        //            new
-        //            {
-        //                cityId = cityId,
-        //                pointOfInterestId = pointOfInterest.Id
-        //            },
-        //           pointOfInterest);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogCritical("An error occured while creating point of interest!", ex);
-        //        return StatusCode(500, "An error occured while handling your request!");
-        //    }
-            
-        //}
+                return CreatedAtRoute("GetPointOfInterest",
+                    new
+                    {
+                        cityId = cityId,
+                        pointOfInterestId = pointOfInterest.Id
+                    },
+                   pointOfInterest);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical("An error occured while creating point of interest!", ex);
+                return StatusCode(500, "An error occured while handling your request!");
+            }
+
+        }
 
         //[HttpPut("{pointofinterestid}")]
         //public ActionResult UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
@@ -201,7 +201,7 @@ namespace Ocelot.Demo.Api2.Controllers
         //        _logger.LogCritical("An error occured while updating the point of interest!", ex);
         //        return StatusCode(500, "An error occured while handling your request!");            
         //    }
-            
+
         //}
 
         //[HttpDelete("{pointOfInterestId}")]
