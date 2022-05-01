@@ -51,5 +51,10 @@ namespace Ocelot.Demo.Api2.Services
         { 
             return (await _cityInfoContext.SaveChangesAsync() >= 0);
         }
+
+        Task ICityInfoRepository.AddPointOfInterestForCityAsync(int cityId, PointOfInterest poi)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
