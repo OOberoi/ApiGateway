@@ -9,6 +9,7 @@ namespace Ocelot.Demo.Api2.Profiles
         public PointOfInterestProfile()
         {
             CreateMap<PointOfInterest, PointOfInterestDto>();
+            CreateMap<PointOfInterestForCreationDto, PointOfInterest>();
         }
     }
 }
