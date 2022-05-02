@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Ocelot.Demo.Api2.Models;
 using Ocelot.Demo.Api2.Services;
 using Ocelot.Demo.Api2.Entities;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
@@ -183,6 +184,9 @@ namespace Ocelot.Demo.Api2.Controllers
                 {
                     return BadRequest(ModelState);
                 }
+
+                _mapper.Map(poiPatch, poi);
+                await _cityInfoRepository.SaveChangesAsync();
 
                 // Return 204 NoContent
                 return NoContent();
