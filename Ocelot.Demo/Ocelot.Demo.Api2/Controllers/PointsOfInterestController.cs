@@ -129,7 +129,6 @@ namespace Ocelot.Demo.Api2.Controllers
                 if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
                     return NotFound();
-                
                 }
 
                 // Look for Point Of Interest
@@ -138,6 +137,8 @@ namespace Ocelot.Demo.Api2.Controllers
                 {
                     return NotFound();
                 }
+
+                _mapper.Map(pointOfInterest, poi);
 
                 // This will still return status code 204, albeit with no content
                 return NoContent();
