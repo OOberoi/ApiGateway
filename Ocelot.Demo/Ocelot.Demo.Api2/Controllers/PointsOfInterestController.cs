@@ -170,19 +170,19 @@ namespace Ocelot.Demo.Api2.Controllers
                     return NotFound();
                 }
 
-                var poiPathc = _mapper.Map<PointOfInterestForUpdateDto>(poi);
-
-
-                
-                patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
+                var poiPatch = _mapper.Map<PointOfInterestForUpdateDto>(poi);
+                                
+                patchDocument.ApplyTo(poiPatch, ModelState);
                 // Check if the ModelState is valid
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
 
-                pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
-                pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
+                if (!TryValidateModel(poiPatch))
+                {
+                    return BadRequest(ModelState);
+                }
 
                 // Return 204 NoContent
                 return NoContent();
