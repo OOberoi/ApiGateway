@@ -153,52 +153,48 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
 
-        //[HttpPatch("{pointofinterestid}")]
-        //public ActionResult PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId, 
-        //                                                    JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
-        //{
-        //    try
-        //    {
-        //        var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id != cityId);
-        //        if (city == null)
-        //        {
-        //            _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
-        //            return NotFound();
-        //        }
+        [HttpPatch("{pointofinterestid}")]
+        public async Task<ActionResult> PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId,
+                                                            JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
+        {
+            try
+            {
+                if (!await _cityInfoRepository.CityExistsAsync(cityId))
+                {
+                    return NotFound();
+                }
 
-        //        var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
-        //        if (pointOfInterestFromStore == null)
-        //        {
-        //            _logger.LogCritical($"Point of interest could not be retrieved with id {pointOfInterestId}");
-        //            return NotFound();
-        //        }
+                var poi = await _cityInfoRepository.GetPointOfInterestForCityAsync(cityId, pointOfInterestId);
+                if (poi == null)
+                {
+                    return NotFound();
+                }
 
-        //        var pointOfInterestToPatch = new PointOfInterestForUpdateDto()
-        //        {
-        //            Name = pointOfInterestFromStore.Name,
-        //            Description = pointOfInterestFromStore.Description
-        //        };
-        //        patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
-        //        // Check if the ModelState is valid
-        //        if (!ModelState.IsValid)
-        //        {
-        //            return BadRequest(ModelState);
-        //        }
+                var poiPathc = _mapper.Map<PointOfInterestForUpdateDto>(poi);
 
-        //        pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
-        //        pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
 
-        //        // Return 204 NoContent
-        //        return NoContent();
-        //    }
+                
+                patchDocument.ApplyTo(pointOfInterestToPatch, ModelState);
+                // Check if the ModelState is valid
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogCritical("An error occured while updating the point of interest!", ex);
-        //        return StatusCode(500, "An error occured while handling your request!");            
-        //    }
+                pointOfInterestFromStore.Name = pointOfInterestToPatch.Name;
+                pointOfInterestFromStore.Description = pointOfInterestToPatch.Description;
 
-        //}
+                // Return 204 NoContent
+                return NoContent();
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogCritical("An error occured while updating the point of interest!", ex);
+                return StatusCode(500, "An error occured while handling your request!");
+            }
+
+        }
 
         //[HttpDelete("{pointOfInterestId}")]
         //public ActionResult DeletePointOfInterest(int cityId, int pointOfInterestId)
