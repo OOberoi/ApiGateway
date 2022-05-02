@@ -139,6 +139,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 }
 
                 _mapper.Map(pointOfInterest, poi);
+                await _cityInfoRepository.SaveChangesAsync();
 
                 // This will still return status code 204, albeit with no content
                 return NoContent();
