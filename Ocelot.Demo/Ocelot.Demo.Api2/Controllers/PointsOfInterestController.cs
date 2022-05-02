@@ -121,38 +121,38 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
 
-        //[HttpPut("{pointofinterestid}")]
-        //public ActionResult UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
-        //{
-        //    try
-        //    {
-        //        var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id != cityId);
-        //        if (city == null)
-        //        {
-        //            _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
-        //            return NotFound();
-        //        }
+        [HttpPut("{pointofinterestid}")]
+        public ActionResult UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
+        {
+            try
+            {
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id != cityId);
+                if (city == null)
+                {
+                    _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
+                    return NotFound();
+                }
 
-        //        // Look for Point Of Interest
-        //        var pointOfIntFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == pointOfInterestId);
-        //        if (pointOfIntFromStore == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        pointOfIntFromStore.Name = pointOfInterest.Name;
-        //        pointOfIntFromStore.Description = pointOfInterest.Description;
+                // Look for Point Of Interest
+                var pointOfIntFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == pointOfInterestId);
+                if (pointOfIntFromStore == null)
+                {
+                    return NotFound();
+                }
+                pointOfIntFromStore.Name = pointOfInterest.Name;
+                pointOfIntFromStore.Description = pointOfInterest.Description;
 
-        //        // This will still return status code 204, albeit with no content
-        //        return NoContent();
-        //    }
+                // This will still return status code 204, albeit with no content
+                return NoContent();
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogCritical("An error occured while updating point of interest with id {pointOfInterestId}", ex);
-        //        return StatusCode(500, "An error occured while handling your request");
+            catch (Exception ex)
+            {
+                _logger.LogCritical("An error occured while updating point of interest with id {pointOfInterestId}", ex);
+                return StatusCode(500, "An error occured while handling your request");
 
-        //    }
-        //}
+            }
+        }
 
         //[HttpPatch("{pointofinterestid}")]
         //public ActionResult PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId, 
