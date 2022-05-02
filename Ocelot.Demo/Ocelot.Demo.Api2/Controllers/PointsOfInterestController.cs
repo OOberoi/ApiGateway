@@ -122,25 +122,22 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         [HttpPut("{pointofinterestid}")]
-        public ActionResult UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
+        public async Task<ActionResult> UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
         {
             try
             {
-                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id != cityId);
-                if (city == null)
+                if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
-                    _logger.LogCritical($"Point of interest could not be updated with id {cityId}");
                     return NotFound();
+                
                 }
 
                 // Look for Point Of Interest
-                var pointOfIntFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == pointOfInterestId);
-                if (pointOfIntFromStore == null)
+                var poi = await _cityInfoRepository.GetPointOfInterestForCityAsync(cityId, pointOfInterestId);
+                if (poi == null)
                 {
                     return NotFound();
                 }
-                pointOfIntFromStore.Name = pointOfInterest.Name;
-                pointOfIntFromStore.Description = pointOfInterest.Description;
 
                 // This will still return status code 204, albeit with no content
                 return NoContent();
