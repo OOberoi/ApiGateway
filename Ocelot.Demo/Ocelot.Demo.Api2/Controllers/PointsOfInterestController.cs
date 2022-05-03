@@ -200,37 +200,37 @@ namespace Ocelot.Demo.Api2.Controllers
 
         }
 
-        //[HttpDelete("{pointOfInterestId}")]
-        //public ActionResult DeletePointOfInterest(int cityId, int pointOfInterestId)
-        //{
-        //    try
-        //    {
-        //        var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-        //        if (city == null)
-        //        {
-        //            _logger.LogCritical($"Point of interest could not be deleted with id {cityId}");
-        //            return NotFound();
-        //        }
+        [HttpDelete("{pointOfInterestId}")]
+        public ActionResult DeletePointOfInterest(int cityId, int pointOfInterestId)
+        {
+            try
+            {
+                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
+                if (city == null)
+                {
+                    _logger.LogCritical($"Point of interest could not be deleted with id {cityId}");
+                    return NotFound();
+                }
 
-        //        var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
-        //        if (pointOfInterestFromStore == null)
+                var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
+                if (pointOfInterestFromStore == null)
 
-        //        {
-        //            return NotFound();
-        //        }
-        //        city.PointsOfInterest.Remove(pointOfInterestFromStore);
-        //        _mailService.Send("Point of interest is deleted",
-        //            $"{pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was successfully deleted!");
+                {
+                    return NotFound();
+                }
+                city.PointsOfInterest.Remove(pointOfInterestFromStore);
+                _mailService.Send("Point of interest is deleted",
+                    $"{pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was successfully deleted!");
 
-        //        // Return 204 NoContent
-        //        return NoContent();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogCritical("An error occured while updating the point of interest!", ex);
-        //        return StatusCode(500, "An error occured while handling your request!");
-        //    }
-        //}           
+                // Return 204 NoContent
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical("An error occured while updating the point of interest!", ex);
+                return StatusCode(500, "An error occured while handling your request!");
+            }
+        }
     }
 }
 
