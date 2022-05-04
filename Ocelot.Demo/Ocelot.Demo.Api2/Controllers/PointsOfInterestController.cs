@@ -217,7 +217,6 @@ namespace Ocelot.Demo.Api2.Controllers
                     return NotFound();
                 }
 
-
                 city.PointsOfInterest.Remove(pointOfInterestFromStore);
                 _mailService.Send("Point of interest is deleted",
                     $"{pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was successfully deleted!");
