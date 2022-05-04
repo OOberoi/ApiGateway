@@ -205,19 +205,19 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                var city = _cityDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-                if (city == null)
+                if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
-                    _logger.LogCritical($"Point of interest could not be deleted with id {cityId}");
                     return NotFound();
                 }
 
-                var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
-                if (pointOfInterestFromStore == null)
+                var poi = await _cityInfoRepository.GetPointOfInterestForCityAsync(cityId, pointOfInterestId);
+                if (poi == null)
 
                 {
                     return NotFound();
                 }
+
+
                 city.PointsOfInterest.Remove(pointOfInterestFromStore);
                 _mailService.Send("Point of interest is deleted",
                     $"{pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was successfully deleted!");

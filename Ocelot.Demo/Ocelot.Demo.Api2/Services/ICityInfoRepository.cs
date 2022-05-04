@@ -11,5 +11,6 @@ namespace Ocelot.Demo.Api2.Services
         Task<PointOfInterest?> GetPointOfInterestForCityAsync(int cityId, int pointOfInterestId);
         Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest poi);
         Task<bool> SaveChangesAsync();
+        Task DeleteChangesAsync();
     }
 }
