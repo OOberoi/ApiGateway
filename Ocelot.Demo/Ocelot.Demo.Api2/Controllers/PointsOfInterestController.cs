@@ -36,7 +36,6 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
-                //throw new Exception("Unexplained error!");                
                 if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
                     _logger.LogInformation($"City with id {cityId} wasn't found when accessing points of interest.");
