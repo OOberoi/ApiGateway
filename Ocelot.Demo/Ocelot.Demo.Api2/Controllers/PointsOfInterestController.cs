@@ -15,7 +15,7 @@ namespace Ocelot.Demo.Api2.Controllers
         private readonly IMailService _mailService;
         private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
-
+          
         public PointsOfInterestController(ILogger<PointsOfInterestController> logger,
             IMailService mailService,
             ICityInfoRepository cityInfoRepository,
