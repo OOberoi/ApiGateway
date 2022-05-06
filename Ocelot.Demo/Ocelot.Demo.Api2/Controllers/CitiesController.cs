@@ -21,7 +21,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
         
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync()
+        public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync(string? name)
         {
             var cityEntities = await _cityInfoRepository.GetCitiesAsync();
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities));
