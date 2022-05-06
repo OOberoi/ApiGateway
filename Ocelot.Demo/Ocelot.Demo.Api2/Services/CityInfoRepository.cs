@@ -23,6 +23,12 @@ namespace Ocelot.Demo.Api2.Services
             { 
                 return await GetCitiesAsync();
             }
+
+            name = name.Trim();
+            return await _cityInfoContext.Cities
+                .Where(c => c.Name == name)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
         }
 
         // AnyAsync will return true if a cityId is found and false otherwise
