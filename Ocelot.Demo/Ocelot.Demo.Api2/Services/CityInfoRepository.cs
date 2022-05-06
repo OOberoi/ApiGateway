@@ -17,9 +17,12 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
 
-        public async Task<IEnumerable<City>> GetCitiesAsync()
-        { 
-        
+        public async Task<IEnumerable<City>> GetCitiesAsync(string? name)
+        {
+            if (string.IsNullOrEmpty(name))
+            { 
+                return await GetCitiesAsync();
+            }
         }
 
         // AnyAsync will return true if a cityId is found and false otherwise
