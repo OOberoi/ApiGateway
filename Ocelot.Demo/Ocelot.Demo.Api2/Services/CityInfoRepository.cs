@@ -39,7 +39,7 @@ namespace Ocelot.Demo.Api2.Services
             }
 
             return await col.OrderBy(c => c.Name).ToListAsync();
-        }
+         }
 
         // AnyAsync will return true if a cityId is found and false otherwise
         public async Task<bool> CityExistsAsync(int cityId)
