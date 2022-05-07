@@ -133,6 +133,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
                 // Look for Point Of Interest
                 var poi = await _cityInfoRepository.GetPointOfInterestForCityAsync(cityId, pointOfInterestId);
+                
                 if (poi == null)
                 {
                     return NotFound();
@@ -149,7 +150,6 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 _logger.LogCritical("An error occured while updating point of interest with id {pointOfInterestId}", ex);
                 return StatusCode(500, "An error occured while handling your request");
-
             }
         }
 
