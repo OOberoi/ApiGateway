@@ -32,11 +32,13 @@ namespace Ocelot.Demo.Api2.Services
                 col = col.Where(c => c.Name == name);
             }
 
-            name = name.Trim();
-            return await _cityInfoContext.Cities
-                .Where(c => c.Name == name)
-                .OrderBy(c => c.Name)
-                .ToListAsync();
+            if (!string.IsNullOrWhiteSpace(searchQuery))
+            { 
+                searchQuery = searchQuery.Trim();
+                col = col.Where(n => n.Name.Contains(searchQuery) || (n.Description != null && n.Description.Contains(searchQuery)));
+            }
+
+            return await col.OrderBy(c => c.Name).ToListAsync();
         }
 
         // AnyAsync will return true if a cityId is found and false otherwise
