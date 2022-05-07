@@ -24,6 +24,14 @@ namespace Ocelot.Demo.Api2.Services
                 return await GetCitiesAsync();
             }
 
+            var col = _cityInfoContext.Cities as IQueryable<City>;
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                name = name.Trim();
+                col = col.Where(c => c.Name == name);
+            }
+
             name = name.Trim();
             return await _cityInfoContext.Cities
                 .Where(c => c.Name == name)
