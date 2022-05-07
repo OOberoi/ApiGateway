@@ -24,7 +24,7 @@ namespace Ocelot.Demo.Api2.Controllers
         //[FromQuery] is optional and is typically used for reading purposes. It's not required!
         public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync([FromQuery] string? name, string? searchQuery)
         {
-            var cityEntities = await _cityInfoRepository.GetCitiesAsync(name);
+            var cityEntities = await _cityInfoRepository.GetCitiesAsync(name, searchQuery);
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities)); 
         }
 

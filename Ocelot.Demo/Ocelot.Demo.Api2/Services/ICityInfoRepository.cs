@@ -5,7 +5,7 @@ namespace Ocelot.Demo.Api2.Services
     public interface ICityInfoRepository
     {
         Task<IEnumerable<City>>GetCitiesAsync();
-        Task<IEnumerable<City>> GetCitiesAsync(string? name);
+        Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery);
         Task<bool> CityExistsAsync(int cityId);
         Task<City?> GetCityAsync(int cityId, bool includesPointsOfInterest);
         Task<IEnumerable<PointOfInterest>> GetPointsOfInterestForCityAsync(int cityId);
