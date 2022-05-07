@@ -19,7 +19,7 @@ namespace Ocelot.Demo.Api2.Services
 
         public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery)
         {
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name) && string.IsNullOrWhiteSpace(searchQuery))
             { 
                 return await GetCitiesAsync();
             }
