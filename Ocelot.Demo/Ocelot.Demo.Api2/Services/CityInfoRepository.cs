@@ -38,7 +38,10 @@ namespace Ocelot.Demo.Api2.Services
                 col = col.Where(n => n.Name.Contains(searchQuery) || (n.Description != null && n.Description.Contains(searchQuery)));
             }
 
-            return await col.OrderBy(c => c.Name).ToListAsync();
+            return await col.OrderBy(c => c.Name)
+                .Skip(pageSize * (pageNum - 1))
+                .Take(pageSize)
+                .ToListAsync();
          }
 
         // AnyAsync will return true if a cityId is found and false otherwise
