@@ -17,7 +17,7 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
 
-        public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery)
+        public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize)
         {
             if (string.IsNullOrEmpty(name) && string.IsNullOrWhiteSpace(searchQuery))
             { 
