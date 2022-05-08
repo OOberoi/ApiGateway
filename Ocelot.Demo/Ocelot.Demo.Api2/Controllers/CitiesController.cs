@@ -11,6 +11,7 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
+        private const int maxPageSize = 20;
 
         public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
