@@ -19,10 +19,11 @@ namespace Ocelot.Demo.Api2.Services
 
         public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize)
         {
-            if (string.IsNullOrEmpty(name) && string.IsNullOrWhiteSpace(searchQuery))
-            { 
-                return await GetCitiesAsync();
-            }
+            // This block of code is not required anymore!
+            //if (string.IsNullOrEmpty(name) && string.IsNullOrWhiteSpace(searchQuery))
+            //{ 
+            //    return await GetCitiesAsync();
+            //}
 
             var col = _cityInfoContext.Cities as IQueryable<City>;
 
