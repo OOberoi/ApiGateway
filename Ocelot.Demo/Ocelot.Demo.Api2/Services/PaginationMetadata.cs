@@ -2,5 +2,7 @@
 {
     public class PaginationMetadata
     {
+        public int TotalItemCount { get; set; }
+
     }
 }
