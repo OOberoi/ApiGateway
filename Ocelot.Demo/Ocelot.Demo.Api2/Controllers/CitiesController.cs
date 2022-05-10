@@ -11,6 +11,7 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
+        private const int maxPageSize = 20;
 
         public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
@@ -22,9 +23,12 @@ namespace Ocelot.Demo.Api2.Controllers
         
         [HttpGet]
         //[FromQuery] is optional and is typically used for reading purposes. It's not required!
-        public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync([FromQuery] string? name, string? searchQuery)
+        public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync(
+            [FromQuery] string? name, string? searchQuery, int pageNum = 1, int pageSize=10)
         {
-            var cityEntities = await _cityInfoRepository.GetCitiesAsync(name, searchQuery);
+            pageSize = pageSize > maxPageSize ? maxPageSize : pageSize;
+
+            var cityEntities = await _cityInfoRepository.GetCitiesAsync(name, searchQuery, pageNum, pageSize);
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities)); 
         }
 

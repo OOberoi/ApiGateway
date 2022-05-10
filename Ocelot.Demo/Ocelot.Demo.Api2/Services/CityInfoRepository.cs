@@ -16,6 +16,7 @@ namespace Ocelot.Demo.Api2.Services
         {
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
+<<<<<<< HEAD
                 
         public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery)
         {
@@ -23,6 +24,16 @@ namespace Ocelot.Demo.Api2.Services
             { 
                 return await GetCitiesAsync(); 
             }
+=======
+
+        public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize)
+        {
+            // This block of code is not required anymore!
+            //if (string.IsNullOrEmpty(name) && string.IsNullOrWhiteSpace(searchQuery))
+            //{ 
+            //    return await GetCitiesAsync();
+            //}
+>>>>>>> a6ae25498415c0d9b31efb66d6dac82d410c5cf8
 
             var col = _cityInfoContext.Cities as IQueryable<City>;
 
@@ -38,7 +49,10 @@ namespace Ocelot.Demo.Api2.Services
                 col = col.Where(n => n.Name.Contains(searchQuery) || (n.Description != null && n.Description.Contains(searchQuery)));
             }
 
-            return await col.OrderBy(c => c.Name).ToListAsync();
+            return await col.OrderBy(c => c.Name)
+                .Skip(pageSize * (pageNum - 1))
+                .Take(pageSize)
+                .ToListAsync();
          }
 
         // AnyAsync will return true if a cityId is found and false otherwise
