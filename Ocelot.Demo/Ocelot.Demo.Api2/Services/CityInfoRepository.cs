@@ -41,6 +41,8 @@ namespace Ocelot.Demo.Api2.Services
                 col = col.Where(n => n.Name.Contains(searchQuery) || (n.Description != null && n.Description.Contains(searchQuery)));
             }
 
+            var totItemCnt = await col.CountAsync();
+
             return await col.OrderBy(c => c.Name)
                 .Skip(pageSize * (pageNum - 1))
                 .Take(pageSize)

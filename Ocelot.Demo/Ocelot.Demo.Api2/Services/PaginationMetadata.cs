@@ -7,12 +7,12 @@
         public int PageSize { get; set; }
         public int CurrentPage { get; set; }
 
-        public PaginationMetadata(int totalItemCount, int totalPageCount, int pageSize, int currentPage)
+        public PaginationMetadata(int totalItemCount, int pageSize, int currentPage)
         {
-            TotalItemCount = totalItemCount;
-            TotalPageCount = totalPageCount;
+            TotalItemCount = totalItemCount;            
             PageSize = pageSize;
             CurrentPage = currentPage;
+            TotalPageCount = (int)Math.Ceiling(totalItemCount / (double)pageSize);
         }
 
     }
