@@ -2,6 +2,7 @@
 using Ocelot.Demo.Api2.Models;
 using Ocelot.Demo.Api2.Services;
 using AutoMapper;
+using System.Text.Json;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
@@ -30,8 +31,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
             var (cityEntities, paginationMetadata) = await _cityInfoRepository.GetCitiesAsync(name, searchQuery, pageNum, pageSize);
 
-
-
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
 
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities)); 
         }
