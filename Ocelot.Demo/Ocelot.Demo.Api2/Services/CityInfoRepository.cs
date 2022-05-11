@@ -17,7 +17,8 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
         }
                
-        public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize)
+        //Tuple - by adding pagination metadata
+        public async Task<(IEnumerable<City>, PaginationMetadata)> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize)
         {
             // This block of code is not required anymore!
             //if (string.IsNullOrEmpty(name) && string.IsNullOrWhiteSpace(searchQuery))
