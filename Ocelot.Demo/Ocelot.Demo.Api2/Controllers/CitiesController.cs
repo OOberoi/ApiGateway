@@ -28,7 +28,11 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             pageSize = pageSize > maxPageSize ? maxPageSize : pageSize;
 
-            var cityEntities = await _cityInfoRepository.GetCitiesAsync(name, searchQuery, pageNum, pageSize);
+            var (cityEntities, paginationMetadata) = await _cityInfoRepository.GetCitiesAsync(name, searchQuery, pageNum, pageSize);
+
+
+
+
             return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDto>>(cityEntities)); 
         }
 
