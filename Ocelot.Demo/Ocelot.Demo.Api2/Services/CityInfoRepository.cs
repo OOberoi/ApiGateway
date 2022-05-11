@@ -25,7 +25,7 @@ namespace Ocelot.Demo.Api2.Services
             //    return await GetCitiesAsync();
             //}
 
-
+            // collection
             var col = _cityInfoContext.Cities as IQueryable<City>;
 
             if (!string.IsNullOrWhiteSpace(name))
