@@ -43,10 +43,15 @@ namespace Ocelot.Demo.Api2.Services
 
             var totItemCnt = await col.CountAsync();
 
-            return await col.OrderBy(c => c.Name)
+            // construct pagination data
+            var paginationMetadata = new PaginationMetadata(totItemCnt, pageSize, pageNum);
+
+            var colRetVal = await col.OrderBy(c => c.Name)
                 .Skip(pageSize * (pageNum - 1))
                 .Take(pageSize)
                 .ToListAsync();
+
+            return (colRetVal, paginationMetadata); 
         }
 
         // AnyAsync will return true if a cityId is found and false otherwise
