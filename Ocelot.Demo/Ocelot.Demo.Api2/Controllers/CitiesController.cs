@@ -55,6 +55,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
             return Ok(_mapper.Map<CityWithoutPointsOfInterestDto>(city ));
         }
+
         #region Redundant
         //public JsonResult GetCitiesOld()
         //{
