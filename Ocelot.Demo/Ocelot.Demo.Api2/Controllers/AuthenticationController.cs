@@ -7,6 +7,12 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
+        public class AuthenticationRequestBody
+        { 
+            
+        }
+
+
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate()
         { 
