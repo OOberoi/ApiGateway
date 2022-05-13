@@ -8,8 +8,9 @@ namespace Ocelot.Demo.Api2.Controllers
     public class AuthenticationController : ControllerBase
     {
         public class AuthenticationRequestBody
-        { 
-            
+        {
+            public string? UserName { get; set; }
+
         }
 
 
