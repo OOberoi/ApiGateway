@@ -10,12 +10,12 @@ namespace Ocelot.Demo.Api2.Controllers
         public class AuthenticationRequestBody
         {
             public string? UserName { get; set; }
-
-        }
+            public string? Password { get; set; }
+       }
 
 
         [HttpPost("authenticate")]
-        public ActionResult<string> Authenticate()
+        public ActionResult<string> Authenticate(AuthenticationRequestBody authenticationRequestBody)
         { 
         
         }
