@@ -43,7 +43,7 @@ namespace Ocelot.Demo.Api2.Controllers
             var city = await _cityInfoRepository.GetCityAsync(id, includePointsOfInterest);
 
             if (city == null)
-            {
+            { 
                 return NotFound();                
             }
 
