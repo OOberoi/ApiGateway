@@ -16,11 +16,17 @@ namespace Ocelot.Demo.Api2.Controllers
 
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate(AuthenticationRequestBody authenticationRequestBody)
-        { 
+        {
             // validate user credentials
+            var user = ValidateUserCredentials();
 
 
         
+        }
+
+        private object ValidateUserCredentials(string userName, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }
