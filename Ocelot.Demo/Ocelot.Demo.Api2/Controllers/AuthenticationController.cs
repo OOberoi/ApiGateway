@@ -17,6 +17,8 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             public int UserId { get; set; }
             public string UserName { get; set; }
+            public string FirstName { get; set; }
+
         }
 
 
