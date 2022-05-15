@@ -14,8 +14,8 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         public class CityInfoUse
-        { 
-        
+        {
+            public int UserId { get; set; }
         }
 
 
