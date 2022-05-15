@@ -7,11 +7,16 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        //public class AuthenticationRequestBody
-        //{
-        //    public string? UserName { get; set; }
-        //    public string? Password { get; set; }
-        //}
+        public class AuthenticationRequestBody
+        {
+            public string? UserName { get; set; }
+            public string? Password { get; set; }
+        }
+
+        public class CityInfoUse
+        { 
+        
+        }
 
 
         [HttpPost("authenticate")]
@@ -29,9 +34,5 @@ namespace Ocelot.Demo.Api2.Controllers
             throw new NotImplementedException();
         }
     }
-    public class AuthenticationRequestBody
-    {
-        public string? UserName { get; set; }
-        public string? Password { get; set; }
-    }
+    
 }
