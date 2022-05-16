@@ -23,7 +23,10 @@ namespace Ocelot.Demo.Api2.Controllers
 
             public CityInfoUser(int userId, string firstName, string lastName, string city)
             {
-
+                UserId = userId;
+                FirstName = firstName;
+                LastName = lastName;
+                City = city;
             }
         }
 
