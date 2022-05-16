@@ -21,7 +21,7 @@ namespace Ocelot.Demo.Api2.Controllers
             public string LastName { get; set; }
             public string City { get; set; }
 
-            public CityInfoUser()
+            public CityInfoUser(int userId, string firstName, string lastName, string city)
             {
 
             }
