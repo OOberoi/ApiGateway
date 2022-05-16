@@ -44,7 +44,8 @@ namespace Ocelot.Demo.Api2.Controllers
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
         {
-            throw new NotImplementedException();
+            return new CityInfoUser(7, userName ?? "", "Obi", "Oberoi", "Toronto");
+
         }
     }
     
