@@ -42,7 +42,7 @@ namespace Ocelot.Demo.Api2.Controllers
         
         }
 
-        private object ValidateUserCredentials(string? userName, string? password)
+        private CityInfoUser ValidateUserCredentials(string? userName, string? password)
         {
             throw new NotImplementedException();
         }
