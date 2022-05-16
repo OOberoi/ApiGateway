@@ -13,13 +13,18 @@ namespace Ocelot.Demo.Api2.Controllers
             public string? Password { get; set; }
         }
 
-        public class CityInfoUse
+        public class CityInfoUser
         {
             public int UserId { get; set; }
             public string UserName { get; set; }
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public string City { get; set; }
+
+            public CityInfoUser()
+            {
+
+            }
         }
 
 
