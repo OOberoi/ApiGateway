@@ -37,7 +37,11 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             // validate user credentials
             var user = ValidateUserCredentials(authenticationRequestBody.UserName, authenticationRequestBody.Password);
-
+            
+            if (user == null)
+            { 
+                return Unauthorized();
+            }
 
         
         }
