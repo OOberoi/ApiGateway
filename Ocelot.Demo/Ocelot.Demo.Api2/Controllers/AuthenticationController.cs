@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
@@ -48,8 +50,9 @@ namespace Ocelot.Demo.Api2.Controllers
             { 
                 return Unauthorized();
             }
-            //Obi to review this
-            return Ok(user);
+
+            //create a token
+            var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Authentication:SecretForKey"]));
         }
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
