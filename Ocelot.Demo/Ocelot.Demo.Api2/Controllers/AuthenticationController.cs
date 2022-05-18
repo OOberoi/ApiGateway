@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 using System.Text;
 
 namespace Ocelot.Demo.Api2.Controllers
@@ -54,6 +55,15 @@ namespace Ocelot.Demo.Api2.Controllers
             //create a token
             var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Authentication:SecretForKey"]));
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            // claims
+            var claimsForToken = new List<Claim>();
+            //Obi to review
+            claimsForToken.Add(new Claim("sub", user.UserId.ToString()));
+            claimsForToken.Add(new Claim("given_name", user.FirstName));
+            claimsForToken.Add(new Claim("family_name", user.LastName));
+            claimsForToken.Add(new Claim("city", user.City));
+
         }
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
