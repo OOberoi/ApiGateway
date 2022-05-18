@@ -30,8 +30,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 City = city;
             }
         }
-
-
+      
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate(AuthenticationRequestBody authenticationRequestBody)
         {
