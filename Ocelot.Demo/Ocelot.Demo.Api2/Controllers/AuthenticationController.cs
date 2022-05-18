@@ -7,6 +7,12 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
+        public AuthenticationController()
+        {
+
+        }
+
+
         public class AuthenticationRequestBody
         {
             public string? UserName { get; set; }
