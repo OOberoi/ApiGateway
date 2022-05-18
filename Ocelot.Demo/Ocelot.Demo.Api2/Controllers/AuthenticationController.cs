@@ -7,9 +7,10 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        public AuthenticationController()
+        IConfiguration _configuration;
+        public AuthenticationController(IConfiguration configuration)
         {
-
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
 
 
