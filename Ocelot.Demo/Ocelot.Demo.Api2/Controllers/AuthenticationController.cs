@@ -48,8 +48,8 @@ namespace Ocelot.Demo.Api2.Controllers
             { 
                 return Unauthorized();
             }
-
-        
+            //Obi to review this
+            return Ok(user);
         }
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
