@@ -58,8 +58,7 @@ namespace Ocelot.Demo.Api2.Controllers
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             // claims
-            var claimsForToken = new List<Claim>();
-            //Obi to review
+            var claimsForToken = new List<Claim>();            
             claimsForToken.Add(new Claim("sub", user.UserId.ToString()));
             claimsForToken.Add(new Claim("given_name", user.FirstName));
             claimsForToken.Add(new Claim("family_name", user.LastName));
