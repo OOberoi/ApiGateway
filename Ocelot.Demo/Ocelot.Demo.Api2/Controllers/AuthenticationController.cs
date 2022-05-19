@@ -72,6 +72,9 @@ namespace Ocelot.Demo.Api2.Controllers
                 DateTime.UtcNow,
                 signingCredentials);
 
+            var tokenRetVal = new JwtSecurityTokenHandler()
+                .WriteToken(jwtSecurityToken);
+
         }
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
