@@ -65,7 +65,13 @@ namespace Ocelot.Demo.Api2.Controllers
             claimsForToken.Add(new Claim("family_name", user.LastName));
             claimsForToken.Add(new Claim("city", user.City));
 
-            //var jwtSecurityToken = new JwtSecurityToken
+            var jwtSecurityToken = new JwtSecurityToken(
+                _configuration["Authentication:Issuer"],
+                _configuration["Authentication:Audience"],
+                claimsForToken,
+                DateTime.UtcNow,
+                DateTime.UtcNow,
+                signingCredentials);
 
         }
 
