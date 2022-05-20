@@ -57,7 +57,7 @@ namespace Ocelot.Demo.Api2.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["Authentication:Secret"]));
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            // claims
+            // add a list of claims
             var claimsForToken = new List<Claim>();            
             claimsForToken.Add(new Claim("sub", user.UserId.ToString()));
             claimsForToken.Add(new Claim("given_name", user.FirstName));
