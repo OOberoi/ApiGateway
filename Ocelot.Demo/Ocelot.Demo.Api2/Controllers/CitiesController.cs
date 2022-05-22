@@ -3,10 +3,12 @@ using Ocelot.Demo.Api2.Models;
 using Ocelot.Demo.Api2.Services;
 using AutoMapper;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
