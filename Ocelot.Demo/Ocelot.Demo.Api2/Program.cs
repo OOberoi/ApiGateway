@@ -38,6 +38,12 @@ builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer(options =>
+    { 
+        
+    });
+
 // Returns a file in the specifiedStream & the specified content type when downloading a file 
 builder.Services.AddSingleton<MailService>();
 
