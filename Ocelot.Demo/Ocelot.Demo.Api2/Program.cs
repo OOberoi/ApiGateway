@@ -3,10 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
-using System.Threading;
-using Serilog;
-using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Serilog;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
