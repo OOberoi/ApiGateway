@@ -3,9 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
-
+using System.Threading;
 using Serilog;
-
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -48,7 +49,8 @@ builder.Services.AddAuthentication("Bearer")
             ValidateAudience = true,
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Authentication:Issuer"],
-
+            ValidAudience = builder.Configuration["Authentication:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Authentication:Secret"]))
         };
     });
 
