@@ -44,6 +44,8 @@ builder.Services.AddAuthentication("Bearer")
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
         {
             ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
         };
     });
 
