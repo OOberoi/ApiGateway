@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
+
 using Serilog;
 
 
@@ -46,6 +47,8 @@ builder.Services.AddAuthentication("Bearer")
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Authentication:Issuer"],
+
         };
     });
 
