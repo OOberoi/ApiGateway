@@ -71,6 +71,10 @@ namespace Ocelot.Demo.Api2.Services
                 .Where(c => c.Id == cityId).FirstOrDefaultAsync();
         }
 
+        public async Task<bool> IsCityExistsAsync(string? cityName, int cityId)
+        { 
+            return await _cityInfoContext.Cities.AnyAsync(c => c.Id == cityId && c.Name == cityName);   
+        }
 
         public async Task<PointOfInterest?> GetPointOfInterestForCityAsync(int cityId, int pointOfInterestId)
         {
