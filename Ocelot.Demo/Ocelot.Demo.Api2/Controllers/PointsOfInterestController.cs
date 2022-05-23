@@ -38,6 +38,10 @@ namespace Ocelot.Demo.Api2.Controllers
             {
                 var cityName = User.Claims.FirstOrDefault(c => c.Type == "city")?.Value;
 
+                if (!await _cityInfoRepository.CityNameMatchesByCityId(cityName, cityId))
+                {
+                    return Forbid();
+                }
 
                 if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
