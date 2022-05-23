@@ -36,6 +36,9 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             try
             {
+                var cityName = User.Claims.FirstOrDefault(c => c.Type == "city")?.Value;
+
+
                 if (!await _cityInfoRepository.CityExistsAsync(cityId))
                 {
                     _logger.LogInformation($"City with id {cityId} wasn't found when accessing points of interest.");
@@ -79,6 +82,7 @@ namespace Ocelot.Demo.Api2.Controllers
                 return StatusCode(500, "An error occured while handling your request!");
             }
         }
+
         [HttpPost]
         public async Task<ActionResult<PointOfInterestDto>> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
         {
