@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 using System.IO;
@@ -6,6 +7,7 @@ using System.IO;
 namespace Ocelot.Demo.Api2.Controllers
 {
     [Route("api/files")]
+    [Authorize]
     [ApiController]
     public class FilesController : ControllerBase
     {
