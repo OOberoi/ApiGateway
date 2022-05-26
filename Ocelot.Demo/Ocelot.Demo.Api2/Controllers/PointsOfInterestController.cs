@@ -4,11 +4,13 @@ using Ocelot.Demo.Api2.Models;
 using Ocelot.Demo.Api2.Services;
 using Ocelot.Demo.Api2.Entities;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
     [Route("api/cities/{cityId}/pointsofinterest")]
     [ApiController]
+    [Authorize]
     public class PointsOfInterestController : ControllerBase 
     {
         private readonly ILogger<PointsOfInterestController> _logger;
