@@ -57,8 +57,8 @@ builder.Services.AddAuthentication("Bearer")
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("TorontoResident", policy =>
-    { 
-    
+    {
+        policy.RequireAuthenticatedUser();
     });
 });
 
