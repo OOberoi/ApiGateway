@@ -59,7 +59,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("TorontoResident", policy =>
     {
         policy.RequireAuthenticatedUser();
-        //policy.RequireClaim()
+        policy.RequireClaim("city", "Toronto");
     });
 });
 
