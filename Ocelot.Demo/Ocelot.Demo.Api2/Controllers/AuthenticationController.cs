@@ -81,7 +81,7 @@ namespace Ocelot.Demo.Api2.Controllers
         {
             return new CityInfoUser(
                 7, 
-                userName ?? "", 
+                userName ?? "ooberoi", 
                 "Obi", 
                 "Oberoi", 
                 "Toronto");
