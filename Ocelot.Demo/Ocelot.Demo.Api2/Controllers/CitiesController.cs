@@ -25,7 +25,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
         
         [HttpGet]
-        //[FromQuery] is optional and is typically used for reading purposes. It's not required!
+        //[FromQuery] is optional and is typically used for reading purposes. It's not a required a!
         public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync(
             [FromQuery] string? name, string? searchQuery, int pageNum = 1, int pageSize=10)
         {

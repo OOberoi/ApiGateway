@@ -79,8 +79,12 @@ namespace Ocelot.Demo.Api2.Controllers
 
         private CityInfoUser ValidateUserCredentials(string? userName, string? password)
         {
-            return new CityInfoUser(7, userName ?? "", "Obi", "Oberoi", "Toronto");
-
+            return new CityInfoUser(
+                7, 
+                userName ?? "", 
+                "Obi", 
+                "Oberoi", 
+                "Toronto");
         }
     }
     
