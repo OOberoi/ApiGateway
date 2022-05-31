@@ -18,7 +18,7 @@ namespace Ocelot.Demo.Api2.Entities
         public int CityId { get; set; }
 
         [MaxLength(250)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
 
         public PointOfInterest(string name)
