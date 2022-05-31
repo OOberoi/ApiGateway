@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Ocelot.Demo.Api2.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
