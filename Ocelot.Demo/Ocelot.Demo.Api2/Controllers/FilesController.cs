@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.StaticFiles;
 namespace Ocelot.Demo.Api2.Controllers
 {
     [Route("api/files")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class FilesController : ControllerBase
     {
