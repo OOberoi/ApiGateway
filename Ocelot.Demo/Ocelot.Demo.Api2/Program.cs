@@ -76,7 +76,10 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
 
 builder.Services.AddSingleton<CitiesDataStore>();
 
-builder.Services.AddApiVersioning();
+builder.Services.AddApiVersioning(setupAction =>
+    {
+        setupAction.AssumeDefaultVersionWhenUnspecified = true;
+    });
 
 var app = builder.Build();
 
