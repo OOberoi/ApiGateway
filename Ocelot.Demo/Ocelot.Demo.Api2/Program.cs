@@ -79,6 +79,7 @@ builder.Services.AddSingleton<CitiesDataStore>();
 builder.Services.AddApiVersioning(setupAction =>
     {
         setupAction.AssumeDefaultVersionWhenUnspecified = true;
+        setupAction.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
     });
 
 var app = builder.Build();
