@@ -5,6 +5,7 @@ using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
