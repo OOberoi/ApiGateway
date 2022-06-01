@@ -76,6 +76,8 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
 
 builder.Services.AddSingleton<CitiesDataStore>();
 
+builder.Services.AddApiVersioning();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
