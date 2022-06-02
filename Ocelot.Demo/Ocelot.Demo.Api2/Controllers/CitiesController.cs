@@ -9,6 +9,7 @@ namespace Ocelot.Demo.Api2.Controllers
 {
     [ApiController]
     //[Authorize]
+     [ApiVersion("1.0")]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {
