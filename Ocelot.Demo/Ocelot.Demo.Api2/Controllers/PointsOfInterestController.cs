@@ -10,6 +10,7 @@ namespace Ocelot.Demo.Api2.Controllers
 {
     [Route("api/cities/{cityId}/pointsofinterest")]
     [ApiController]
+    [ApiVersion("1.1")]
     //[Authorize(Policy = "TorontoResident")] 
     public class PointsOfInterestController : ControllerBase 
     {
