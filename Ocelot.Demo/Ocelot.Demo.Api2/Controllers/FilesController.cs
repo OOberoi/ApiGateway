@@ -6,6 +6,7 @@ namespace Ocelot.Demo.Api2.Controllers
 {
     [Route("api/files")]
     //[Authorize]
+    [ApiVersion("3.0")]
     [ApiController]
     public class FilesController : ControllerBase
     {
