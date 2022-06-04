@@ -41,7 +41,7 @@ namespace Ocelot.Demo.Api2.Controllers
         //[FromQuery] is optional and is typically used for reading purposes. It's not a required a!
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCitiesAsync(
             [FromQuery] string? name, string? searchQuery, int pageNum = 1, int pageSize=10)
         {
