@@ -6,18 +6,29 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Ocelot.Demo.Api2.Controllers
-{
+{    
+    /// <summary>
+    /// 
+    /// </summary>
     [ApiController]
     //[Authorize]
      [ApiVersion("1.0")]
      [ApiVersion("2.0")]    
+     
     [Route("api/cities")]
+    
     public class CitiesController : ControllerBase
     {
         private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
         private const int maxPageSize = 20;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityInfoRepository"></param>
+        /// <param name="mapper"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
         {
             _cityInfoRepository = cityInfoRepository ?? 
