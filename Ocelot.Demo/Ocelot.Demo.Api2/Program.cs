@@ -6,7 +6,9 @@ using Ocelot.Demo.Api2.Services;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using System.Reflection;
 using Serilog;
+
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
