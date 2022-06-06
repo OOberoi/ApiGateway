@@ -44,7 +44,7 @@ namespace Ocelot.Demo.Api2.Controllers
         /// <param name="searchQuery"></param>
         /// <param name="pageNum"></param>
         /// <param name="pageSize"></param>
-        /// <returns></returns>
+        /// <returns>returns IAction result</returns>
         [HttpGet]
         //[FromQuery] is optional and is typically used for reading purposes. It's not a required a!
         [ProducesResponseType(StatusCodes.Status200OK)]
