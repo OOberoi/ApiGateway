@@ -37,6 +37,14 @@ namespace Ocelot.Demo.Api2.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="searchQuery"></param>
+        /// <param name="pageNum"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         [HttpGet]
         //[FromQuery] is optional and is typically used for reading purposes. It's not a required a!
         [ProducesResponseType(StatusCodes.Status200OK)]
