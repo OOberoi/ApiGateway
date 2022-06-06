@@ -40,7 +40,7 @@ namespace Ocelot.Demo.Api2.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name of the city to return"></param>
         /// <param name="searchQuery"></param>
         /// <param name="pageNum"></param>
         /// <param name="pageSize"></param>
