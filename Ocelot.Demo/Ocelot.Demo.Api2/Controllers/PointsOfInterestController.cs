@@ -81,6 +81,12 @@ namespace Ocelot.Demo.Api2.Controllers
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="poiId"></param>
+        /// <returns></returns>
         [HttpGet("{poiId}", Name = "GetPointOfInterest")]
         public async Task<ActionResult<PointOfInterestDto>> GetPointOfInterest(int cityId, int poiId)
         {
