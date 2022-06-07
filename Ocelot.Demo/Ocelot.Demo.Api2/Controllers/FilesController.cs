@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.StaticFiles;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/files")]
     //[Authorize]
     [ApiVersion("2.0")]
