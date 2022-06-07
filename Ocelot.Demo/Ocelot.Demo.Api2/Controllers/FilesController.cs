@@ -16,6 +16,11 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         private readonly FileExtensionContentTypeProvider _fileExtensionContentTypeProvider;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileExtensionContentTypeProvider"></param>
+        /// <exception cref="System.ArgumentNullException"></exception>
         public FilesController(FileExtensionContentTypeProvider fileExtensionContentTypeProvider)
         {
             _fileExtensionContentTypeProvider = fileExtensionContentTypeProvider
