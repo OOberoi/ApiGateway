@@ -22,6 +22,11 @@ namespace Ocelot.Demo.Api2.Controllers
         //todo: to supply the absolute path
         private static readonly string appPath = Directory.GetCurrentDirectory();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <returns></returns>
         [HttpGet("{fileId}")]
         public ActionResult GetFile(string fileId)
         {  
