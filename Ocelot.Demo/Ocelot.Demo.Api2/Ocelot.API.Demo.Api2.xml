@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ocelot.Demo.Api2</name>
+    </assembly>
+    <members>
+        <member name="T:Ocelot.Demo.Api2.Controllers.CitiesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.CitiesController.#ctor(Ocelot.Demo.Api2.Services.ICityInfoRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="cityInfoRepository"></param>
+            <param name="mapper"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>
