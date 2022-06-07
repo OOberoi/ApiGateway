@@ -22,7 +22,15 @@ namespace Ocelot.Demo.Api2.Controllers
         private readonly IMailService _mailService;
         private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
-          
+         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="mailService"></param>
+        /// <param name="cityInfoRepository"></param>
+        /// <param name="mapper"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public PointsOfInterestController(ILogger<PointsOfInterestController> logger,
             IMailService mailService,
             ICityInfoRepository cityInfoRepository,
