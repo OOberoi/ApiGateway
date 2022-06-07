@@ -46,6 +46,11 @@ namespace Ocelot.Demo.Api2.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <returns></returns>
         [HttpGet()]
         public async Task<ActionResult<IEnumerable<PointOfInterestDto>>> GetPointsOfInterest(int cityId)
         {
