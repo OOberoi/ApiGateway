@@ -61,6 +61,11 @@ namespace Ocelot.Demo.Api2.Controllers
         }
       
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authenticationRequestBody"></param>
+        /// <returns></returns>
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate(AuthenticationRequestBody authenticationRequestBody)
         {
