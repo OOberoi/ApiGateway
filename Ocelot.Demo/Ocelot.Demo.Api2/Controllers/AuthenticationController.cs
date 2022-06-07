@@ -25,7 +25,9 @@ namespace Ocelot.Demo.Api2.Controllers
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public class AuthenticationRequestBody
         {
             public string? UserName { get; set; }
@@ -58,6 +60,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
       
+
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate(AuthenticationRequestBody authenticationRequestBody)
         {
