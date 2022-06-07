@@ -32,6 +32,14 @@ namespace Ocelot.Demo.Api2.Controllers
             public string LastName { get; set; }
             public string City { get; set; }
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="userId"></param>
+            /// <param name="userName"></param>
+            /// <param name="firstName"></param>
+            /// <param name="lastName"></param>
+            /// <param name="city"></param>
             public CityInfoUser(int userId, string userName, string firstName, string lastName, string city)
             {
                 UserId = userId;
