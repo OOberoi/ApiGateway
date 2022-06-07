@@ -4,6 +4,45 @@
         <name>Ocelot.Demo.Api2</name>
     </assembly>
     <members>
+        <member name="T:Ocelot.Demo.Api2.Controllers.AuthenticationController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.AuthenticationController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Controllers.AuthenticationController.AuthenticationRequestBody">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser">
+            <summary>
+            returns CityInfoUser object
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.#ctor(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <param name="userName"></param>
+            <param name="firstName"></param>
+            <param name="lastName"></param>
+            <param name="city"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.AuthenticationController.Authenticate(Ocelot.Demo.Api2.Controllers.AuthenticationController.AuthenticationRequestBody)">
+            <summary>
+            
+            </summary>
+            <param name="authenticationRequestBody"></param>
+            <returns></returns>
+        </member>
         <member name="T:Ocelot.Demo.Api2.Controllers.CitiesController">
             <summary>
             
@@ -16,6 +55,73 @@
             <param name="cityInfoRepository"></param>
             <param name="mapper"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.CitiesController.GetCitiesAsync(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name of the cities to returnofthecitiestoreturn"></param>
+            <param name="searchQuery"></param>
+            <param name="pageNum"></param>
+            <param name="pageSize"></param>
+            <returns>returns IAction result</returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.CitiesController.GetCityAsync(System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="includePointsOfInterest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Controllers.FilesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.FilesController.#ctor(Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider)">
+            <summary>
+            
+            </summary>
+            <param name="fileExtensionContentTypeProvider"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.FilesController.GetFile(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Controllers.PointsOfInterestController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.#ctor(Microsoft.Extensions.Logging.ILogger{Ocelot.Demo.Api2.Controllers.PointsOfInterestController},Ocelot.Demo.Api2.Services.IMailService,Ocelot.Demo.Api2.Services.ICityInfoRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+            <param name="mailService"></param>
+            <param name="cityInfoRepository"></param>
+            <param name="mapper"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.GetPointsOfInterest(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.GetPointOfInterest(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cityId"></param>
+            <param name="poiId"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
