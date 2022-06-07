@@ -15,6 +15,11 @@ namespace Ocelot.Demo.Api2.Controllers
     public class AuthenticationController : ControllerBase
     {
         IConfiguration _configuration;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public AuthenticationController(IConfiguration configuration)
         {
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
