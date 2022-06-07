@@ -7,6 +7,9 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace Ocelot.Demo.Api2.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/authentication")]
     [ApiController]
     public class AuthenticationController : ControllerBase
