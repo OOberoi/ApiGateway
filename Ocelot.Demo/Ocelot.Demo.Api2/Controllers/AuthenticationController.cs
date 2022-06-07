@@ -34,6 +34,9 @@ namespace Ocelot.Demo.Api2.Controllers
             public string? Password { get; set; }
         }
 
+        /// <summary>
+        /// returns CityInfoUser object
+        /// </summary>
         public class CityInfoUser
         {
             public int UserId { get; set; }
