@@ -254,7 +254,12 @@ namespace Ocelot.Demo.Api2.Controllers
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="pointOfInterestId"></param>
+        /// <returns></returns>
         [HttpDelete("{pointOfInterestId}")]
         public async Task<ActionResult> DeletePointOfInterest(int cityId, int pointOfInterestId)
         {
