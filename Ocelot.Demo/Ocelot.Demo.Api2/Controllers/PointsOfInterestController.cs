@@ -112,7 +112,12 @@ namespace Ocelot.Demo.Api2.Controllers
                 return StatusCode(500, "An error occured while handling your request!");
             }
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="poi"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<PointOfInterestDto>> CreatePointOfInterest(int cityId, PointOfInterestForCreationDto poi)
         {
