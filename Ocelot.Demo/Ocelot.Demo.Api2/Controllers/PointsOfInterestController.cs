@@ -150,7 +150,12 @@ namespace Ocelot.Demo.Api2.Controllers
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="poi"></param>
+        /// <returns></returns>
         public async Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest poi)
         {
             var city = await _cityInfoRepository.GetCityAsync(cityId, false);
