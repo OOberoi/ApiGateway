@@ -202,7 +202,13 @@ namespace Ocelot.Demo.Api2.Controllers
                 return StatusCode(500, "An error occured while handling your request");
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="pointOfInterestId"></param>
+        /// <param name="patchDocument"></param>
+        /// <returns></returns>
         [HttpPatch("{pointofinterestid}")]
         public async Task<ActionResult> PartiallyUpdatePointOfInterest(int cityId, int pointOfInterestId,
                                                             JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
