@@ -164,7 +164,13 @@ namespace Ocelot.Demo.Api2.Controllers
                 city.PointsOfInterest.Add(poi);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="pointOfInterestId"></param>
+        /// <param name="pointOfInterest"></param>
+        /// <returns></returns>
         [HttpPut("{pointofinterestid}")]
         public async Task<ActionResult> UpdatePointOfInterest(int cityId, int pointOfInterestId, PointOfInterestForUpdateDto pointOfInterest)
         {
