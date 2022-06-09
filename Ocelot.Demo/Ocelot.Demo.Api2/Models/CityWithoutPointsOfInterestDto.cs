@@ -9,6 +9,9 @@
         /// Id of the city
         /// </summary>
         public int Id { get; set; }
+        /// <summary>
+        /// Name of the city
+        /// </summary>
         public string? Name { get; set; } = string.Empty;
         public string? Description { get; set; }
     }
