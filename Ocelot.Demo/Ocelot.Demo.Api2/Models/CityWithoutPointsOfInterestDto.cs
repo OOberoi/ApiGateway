@@ -13,6 +13,9 @@
         /// Name of the city
         /// </summary>
         public string? Name { get; set; } = string.Empty;
+        /// <summary>
+        /// Description of the city
+        /// </summary>
         public string? Description { get; set; }
     }
 }
