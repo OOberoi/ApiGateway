@@ -38,7 +38,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
         
         /// <summary>
-        /// 
+        /// Get an enumerable of cities
         /// </summary>
         /// <param name="name of the cities to return"></param>
         /// <param name="searchQuery"></param>
