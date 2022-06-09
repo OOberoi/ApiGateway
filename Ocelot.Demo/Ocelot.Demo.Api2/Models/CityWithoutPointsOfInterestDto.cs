@@ -5,6 +5,9 @@
     /// </summary>
     public class CityWithoutPointsOfInterestDto
     {
+        /// <summary>
+        /// Id of the city
+        /// </summary>
         public int Id { get; set; }
         public string? Name { get; set; } = string.Empty;
         public string? Description { get; set; }
