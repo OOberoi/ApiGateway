@@ -1,5 +1,8 @@
 ﻿namespace Ocelot.Demo.Api2.Models
 {
+    /// <summary>
+    /// A DTO for City with points of interest 
+    /// </summary>
     public class CityDto
     {
         public int Id { get; set; } 
