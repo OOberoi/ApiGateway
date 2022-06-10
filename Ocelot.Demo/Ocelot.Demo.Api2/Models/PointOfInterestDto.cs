@@ -13,6 +13,9 @@
         /// Name for POI
         /// </summary>
         public string? Name { get; set; }
+        /// <summary>
+        /// Nullable description for POI
+        /// </summary>
         public string? Description { get; set; }        
     }
 }
