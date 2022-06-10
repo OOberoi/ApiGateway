@@ -9,6 +9,9 @@
         /// City Id
         /// </summary>
         public int Id { get; set; } 
+        /// <summary>
+        /// Name of city
+        /// </summary>
         public string Name { get; set; } = string.Empty;
         public string? Description { get; set; }
         public int NumOfPointsOfInterest {
