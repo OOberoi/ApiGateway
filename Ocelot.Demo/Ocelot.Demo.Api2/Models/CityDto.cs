@@ -17,6 +17,9 @@
         /// Nullable description of city
         /// </summary>
         public string? Description { get; set; }
+        /// <summary>
+        /// Get a count of no. of interests for a given city
+        /// </summary>
         public int NumOfPointsOfInterest {
             get { return PointsOfInterest.Count; }
         }
