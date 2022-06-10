@@ -13,6 +13,9 @@
         /// Name of city
         /// </summary>
         public string Name { get; set; } = string.Empty;
+        /// <summary>
+        /// Nullable description of city
+        /// </summary>
         public string? Description { get; set; }
         public int NumOfPointsOfInterest {
             get { return PointsOfInterest.Count; }
