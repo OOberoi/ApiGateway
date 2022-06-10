@@ -23,6 +23,9 @@
         public int NumOfPointsOfInterest {
             get { return PointsOfInterest.Count; }
         }
+        /// <summary>
+        /// Get a collection of PointsOfInterest
+        /// </summary>
         public ICollection<PointOfInterestDto> PointsOfInterest { get; set; } = new List<PointOfInterestDto>();
     }
 }
