@@ -10,7 +10,7 @@
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// Name for POI
+        /// Nullable Name for POI
         /// </summary>
         public string? Name { get; set; }
         /// <summary>
