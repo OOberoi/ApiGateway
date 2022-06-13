@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Ocelot.Demo.Api2.Controllers
 {
     /// <summary>
-    /// 
+    /// API Project
     /// </summary>
     [Route("api/cities/{cityId}/pointsofinterest")]
     [ApiController]
