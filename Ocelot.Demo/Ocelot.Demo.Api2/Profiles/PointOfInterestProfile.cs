@@ -9,6 +9,9 @@ namespace Ocelot.Demo.Api2.Profiles
     /// </summary>
     public class PointOfInterestProfile : Profile
     {
+        /// <summary>
+        /// Constructor 
+        /// </summary>
         public PointOfInterestProfile()
         {
             CreateMap<PointOfInterest, PointOfInterestDto>();
