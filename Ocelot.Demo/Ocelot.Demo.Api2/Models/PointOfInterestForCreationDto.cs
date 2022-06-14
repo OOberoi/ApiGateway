@@ -7,6 +7,9 @@ namespace Ocelot.Demo.Api2.Models
     /// </summary>
     public class PointOfInterestForCreationDto
     {
+        /// <summary>
+        /// Name of point of interest
+        /// </summary>
         [Required(ErrorMessage = "Name is missing!") ] 
         [MaxLength(50)]
         public string Name { get; set; } = string.Empty;
