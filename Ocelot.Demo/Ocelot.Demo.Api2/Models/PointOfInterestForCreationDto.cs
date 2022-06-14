@@ -2,6 +2,9 @@
 
 namespace Ocelot.Demo.Api2.Models
 {
+    /// <summary>
+    /// DTO for point of interest
+    /// </summary>
     public class PointOfInterestForCreationDto
     {
         [Required(ErrorMessage = "Name is missing!") ] 
