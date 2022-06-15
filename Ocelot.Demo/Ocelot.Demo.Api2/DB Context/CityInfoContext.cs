@@ -8,6 +8,9 @@ namespace Ocelot.Demo.Api2.DB_Context
     /// </summary>
     public class CityInfoContext : DbContext
     {
+        /// <summary>
+        /// A repsresentation of city in the db
+        /// </summary>
         public DbSet<City> Cities { get; set; } = null!;
         public DbSet<PointOfInterest> PointOfInterests { get; set;} = null!;
 
