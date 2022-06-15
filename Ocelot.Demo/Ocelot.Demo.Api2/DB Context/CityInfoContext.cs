@@ -28,6 +28,10 @@ namespace Ocelot.Demo.Api2.DB_Context
             
         }
 
+        /// <summary>
+        /// Typically used for connections etc., but it's now being defined in appsettings
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("Server=DESKTOP-9AB4882;Database=Ocelot.Demo.CityInfoDB;Trusted_Connection=true;");
