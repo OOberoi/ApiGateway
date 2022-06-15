@@ -3,6 +3,9 @@ using Ocelot.Demo.Api2.Entities;
 
 namespace Ocelot.Demo.Api2.DB_Context
 {
+    /// <summary>
+    /// DbContext class used for EF Core ORM
+    /// </summary>
     public class CityInfoContext : DbContext
     {
         public DbSet<City> Cities { get; set; } = null!;
