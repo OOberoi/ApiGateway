@@ -18,6 +18,10 @@ namespace Ocelot.Demo.Api2.DB_Context
         /// </summary>
         public DbSet<PointOfInterest> PointOfInterests { get; set;} = null!;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="options"></param>
         public CityInfoContext(DbContextOptions<CityInfoContext> options)
             : base(options) 
         {
