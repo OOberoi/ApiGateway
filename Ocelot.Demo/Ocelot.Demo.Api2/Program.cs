@@ -85,6 +85,7 @@ builder.Services.AddTransient<IMailService, CloudMailService>();
 
 builder.Services.AddSingleton<CitiesDataStore>();
 
+// ApiVersioning to be used for versioning controller methods
 builder.Services.AddApiVersioning(setupAction =>
     {
         setupAction.AssumeDefaultVersionWhenUnspecified = true;
