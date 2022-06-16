@@ -13,10 +13,8 @@ namespace Ocelot.Demo.Api2.Controllers
     [ApiController]
     //[Authorize]
      [ApiVersion("1.0")]
-     [ApiVersion("2.0")]    
-     
-    [Route("api/cities")]
-    
+     [ApiVersion("2.0")]        
+    [Route("api/v{version:apiVersion}/cities")]    
     public class CitiesController : ControllerBase
     {
         private readonly ICityInfoRepository _cityInfoRepository;
