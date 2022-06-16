@@ -38,6 +38,10 @@ namespace Ocelot.Demo.Api2.DB_Context
             base.OnConfiguring(optionsBuilder);
         }
 
+        /// <summary>
+        /// Used for seeding data
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<City>()
