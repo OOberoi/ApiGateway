@@ -11,7 +11,7 @@ namespace Ocelot.Demo.Api2.Controllers
     /// <summary>
     /// API Project
     /// </summary>
-    [Route("api/cities/{cityId}/pointsofinterest")]
+    [Route("api/v{version:apiVersion}/cities/{cityId}/pointsofinterest")]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("1.1")]

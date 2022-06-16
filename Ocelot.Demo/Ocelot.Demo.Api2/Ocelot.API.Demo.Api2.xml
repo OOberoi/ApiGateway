@@ -58,7 +58,7 @@
         </member>
         <member name="M:Ocelot.Demo.Api2.Controllers.CitiesController.GetCitiesAsync(System.String,System.String,System.Int32,System.Int32)">
             <summary>
-            
+            Get an enumerable of cities
             </summary>
             <param name="name of the cities to returnofthecitiestoreturn"></param>
             <param name="searchQuery"></param>
@@ -95,7 +95,7 @@
         </member>
         <member name="T:Ocelot.Demo.Api2.Controllers.PointsOfInterestController">
             <summary>
-            
+            API Project
             </summary>
         </member>
         <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.#ctor(Microsoft.Extensions.Logging.ILogger{Ocelot.Demo.Api2.Controllers.PointsOfInterestController},Ocelot.Demo.Api2.Services.IMailService,Ocelot.Demo.Api2.Services.ICityInfoRepository,AutoMapper.IMapper)">
@@ -122,6 +122,197 @@
             <param name="cityId"></param>
             <param name="poiId"></param>
             <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.CreatePointOfInterest(System.Int32,Ocelot.Demo.Api2.Models.PointOfInterestForCreationDto)">
+            <summary>
+            
+            </summary>
+            <param name="cityId"></param>
+            <param name="poi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.AddPointOfInterestForCityAsync(System.Int32,Ocelot.Demo.Api2.Entities.PointOfInterest)">
+            <summary>
+            
+            </summary>
+            <param name="cityId"></param>
+            <param name="poi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.UpdatePointOfInterest(System.Int32,System.Int32,Ocelot.Demo.Api2.Models.PointOfInterestForUpdateDto)">
+            <summary>
+            
+            </summary>
+            <param name="cityId"></param>
+            <param name="pointOfInterestId"></param>
+            <param name="pointOfInterest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.PartiallyUpdatePointOfInterest(System.Int32,System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{Ocelot.Demo.Api2.Models.PointOfInterestForUpdateDto})">
+            <summary>
+            
+            </summary>
+            <param name="cityId"></param>
+            <param name="pointOfInterestId"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Controllers.PointsOfInterestController.DeletePointOfInterest(System.Int32,System.Int32)">
+            <summary>
+             Deletes a point of interest
+             </summary>
+             <param name="cityId"></param>
+             <param name="pointOfInterestId"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.DB_Context.CityInfoContext">
+            <summary>
+            DbContext class used for EF Core ORM
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.DB_Context.CityInfoContext.Cities">
+            <summary>
+            A repsresentation of city in the db
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.DB_Context.CityInfoContext.PointOfInterests">
+            <summary>
+            Represents PointOfInterst table in the db
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.DB_Context.CityInfoContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Ocelot.Demo.Api2.DB_Context.CityInfoContext})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.DB_Context.CityInfoContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Typically used for connections etc., but it's now being defined in appsettings
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.DB_Context.CityInfoContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Used for seeding data
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Models.CityDto">
+            <summary>
+            A DTO for City with points of interest 
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityDto.Id">
+            <summary>
+            City Id
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityDto.Name">
+            <summary>
+            Name of city
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityDto.Description">
+            <summary>
+            Nullable description of city
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityDto.NumOfPointsOfInterest">
+            <summary>
+            Get a count of no. of interests for a given city
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityDto.PointsOfInterest">
+            <summary>
+            Get a collection of PointsOfInterest
+            </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Models.CityWithoutPointsOfInterestDto">
+            <summary>
+            A DTO for a city without point of interest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityWithoutPointsOfInterestDto.Id">
+            <summary>
+            Id of the city
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityWithoutPointsOfInterestDto.Name">
+            <summary>
+            Name of the city
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.CityWithoutPointsOfInterestDto.Description">
+            <summary>
+            Description of the city
+            </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Models.PointOfInterestDto">
+            <summary>
+            DTO for point of interest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestDto.Id">
+            <summary>
+            Id for POI
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestDto.Name">
+            <summary>
+            Nullable Name for POI
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestDto.Description">
+            <summary>
+            Nullable description for POI
+            </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Models.PointOfInterestForCreationDto">
+            <summary>
+            DTO for point of interest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestForCreationDto.Name">
+            <summary>
+            Name of point of interest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestForCreationDto.Description">
+            <summary>
+            Description of point of interest
+            </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Models.PointOfInterestForUpdateDto">
+            <summary>
+            DTO to update point of interest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestForUpdateDto.Name">
+            <summary>
+            Name of point of interest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Models.PointOfInterestForUpdateDto.Description">
+            <summary>
+            Description of point of interest
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Ocelot.Demo.Api2.Profiles.CityProfile" -->
+        <member name="M:Ocelot.Demo.Api2.Profiles.CityProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Profiles.PointOfInterestProfile">
+            <summary>
+            A PointOfInterestProfile class that defines mappings between DTOs and entities
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Profiles.PointOfInterestProfile.#ctor">
+            <summary>
+            Constructor 
+            </summary>
         </member>
     </members>
 </doc>
