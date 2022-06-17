@@ -26,8 +26,15 @@ namespace Ocelot.Demo.Api2.Entities
         [MaxLength(250)]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// A collection of Point of Interests
+        /// </summary>
         public ICollection<PointOfInterest> PointsOfInterest { get; set; } = new List<PointOfInterest>();
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name"></param>
         public City(string name)
         {
             Name = name;
