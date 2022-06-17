@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ocelot.Demo.Api2.Entities
 {
+    /// <summary>
+    /// A class that represents a city object
+    /// </summary>
     public class City
     {
         [Key]
