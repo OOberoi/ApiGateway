@@ -10,8 +10,12 @@ namespace Ocelot.Demo.Api2.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int Id { get; set; }
 
+        /// <summary>
+        /// City Name
+        /// </summary>
         [Required]
         [MaxLength(25)]
         public string Name { get; set; }
