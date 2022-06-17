@@ -20,6 +20,9 @@ namespace Ocelot.Demo.Api2.Entities
         [MaxLength(25)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Decription of City
+        /// </summary>
         [MaxLength(250)]
         public string? Description { get; set; }
 
