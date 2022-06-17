@@ -8,9 +8,11 @@ namespace Ocelot.Demo.Api2.Entities
     /// </summary>
     public class City
     {
+        /// <summary>
+        /// Id of the City
+        /// </summary>
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-       
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]               
         public int Id { get; set; }
 
         /// <summary>
