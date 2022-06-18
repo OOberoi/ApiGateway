@@ -44,7 +44,10 @@ namespace Ocelot.Demo.Api2.Entities
         [MaxLength(250)]
         public string? Description { get; set; }
 
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="name"></param>
         public PointOfInterest(string name)
         {
             Name = name;
