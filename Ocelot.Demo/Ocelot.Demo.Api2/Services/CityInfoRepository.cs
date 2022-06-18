@@ -112,7 +112,7 @@ namespace Ocelot.Demo.Api2.Services
         }
 
         /// <summary>
-        /// 
+        /// Returns a list of points of interest for a given city
         /// </summary>
         /// <param name="cityId"></param>
         /// <returns></returns>
