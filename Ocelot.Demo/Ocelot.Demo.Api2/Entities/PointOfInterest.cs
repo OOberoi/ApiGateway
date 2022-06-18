@@ -38,6 +38,9 @@ namespace Ocelot.Demo.Api2.Entities
         /// </summary>
         public int CityId { get; set; }
 
+        /// <summary>
+        /// Description of City
+        /// </summary>
         [MaxLength(250)]
         public string? Description { get; set; }
 
