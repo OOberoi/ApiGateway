@@ -99,7 +99,12 @@ namespace Ocelot.Demo.Api2.Services
             return await _cityInfoContext.Cities.AnyAsync(c => c.Id == cityId && c.Name == cityName);   
         }
 
-        
+        /// <summary>
+        /// Returns Points of Interest for a given city
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <param name="pointOfInterestId"></param>
+        /// <returns></returns>
         public async Task<PointOfInterest?> GetPointOfInterestForCityAsync(int cityId, int pointOfInterestId)
         {
             return await _cityInfoContext.PointOfInterests
