@@ -21,15 +21,21 @@ namespace Ocelot.Demo.Api2.Entities
         [Required]
         [MaxLength(25)]
         public string Name { get; set; }
-        
-        
-        [ForeignKey("CityId")]
+
 
         /// <summary>
         /// CityId used as foreign key
         /// </summary>
+
+        [ForeignKey("CityId")]
+
+        
+       
         public City? City { get; set; }
 
+        /// <summary>
+        /// City Id
+        /// </summary>
         public int CityId { get; set; }
 
         [MaxLength(250)]
