@@ -25,12 +25,11 @@ namespace Ocelot.Demo.Api2.Entities
         
         [ForeignKey("CityId")]
 
-        
-        public City? City { get; set; }
-
         /// <summary>
         /// CityId used as foreign key
         /// </summary>
+        public City? City { get; set; }
+
         public int CityId { get; set; }
 
         [MaxLength(250)]
