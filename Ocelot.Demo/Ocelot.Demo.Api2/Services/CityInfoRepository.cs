@@ -20,6 +20,11 @@ namespace Ocelot.Demo.Api2.Services
         {
             _cityInfoContext = context ?? throw new ArgumentNullException(nameof(context));
         }
+
+        /// <summary>
+        /// A task that returns a list of cities
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<City>> GetCitiesAsync()
         {
             return await _cityInfoContext.Cities.OrderBy(c => c.Name).ToListAsync();
