@@ -67,7 +67,11 @@ namespace Ocelot.Demo.Api2.Services
             return (colRetVal, paginationMetadata); 
         }
 
-        // AnyAsync will return true if a cityId is found and false otherwise
+        /// <summary>
+        /// AnyAsync will return true if a cityId is found and false otherwise
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <returns></returns>
         public async Task<bool> CityExistsAsync(int cityId)
         {
             return await _cityInfoContext.Cities.AnyAsync(c => c.Id == cityId);
