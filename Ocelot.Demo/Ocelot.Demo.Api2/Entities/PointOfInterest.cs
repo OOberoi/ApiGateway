@@ -15,6 +15,9 @@ namespace Ocelot.Demo.Api2.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        /// <summary>
+        /// CityId used as foreign key
+        /// </summary>
         [Required]
         [MaxLength(25)]
         public string Name { get; set; }
