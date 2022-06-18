@@ -100,7 +100,7 @@ namespace Ocelot.Demo.Api2.Services
         }
 
         /// <summary>
-        /// Returns Points of Interest for a given city
+        /// Returns Points of Interest object for a given city
         /// </summary>
         /// <param name="cityId"></param>
         /// <param name="pointOfInterestId"></param>
@@ -111,6 +111,11 @@ namespace Ocelot.Demo.Api2.Services
                 .Where(p => p.CityId == cityId && p.Id == pointOfInterestId).FirstOrDefaultAsync();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<PointOfInterest>> GetPointsOfInterestForCityAsync(int cityId)
         {
             return await _cityInfoContext.PointOfInterests
