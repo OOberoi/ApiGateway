@@ -122,7 +122,10 @@ namespace Ocelot.Demo.Api2.Services
                 .Where(p => p.CityId == cityId).ToListAsync();
         }
 
-        // Return true when one or more item in the entity are saved
+        /// <summary>
+        /// Returns true when one or more items in the entity are saved
+        /// </summary>
+        /// <returns></returns>
         public async Task<bool> SaveChangesAsync()
         {
             return (await _cityInfoContext.SaveChangesAsync() >= 0);
