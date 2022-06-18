@@ -4,6 +4,9 @@ using Ocelot.Demo.Api2.Entities;
 
 namespace Ocelot.Demo.Api2.Services
 {
+    /// <summary>
+    /// A repository class for City Info
+    /// </summary>
     public class CityInfoRepository : ICityInfoRepository
     {
         private readonly CityInfoContext _cityInfoContext;
