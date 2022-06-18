@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ocelot.Demo.Api2.Entities
 {
+    /// <summary>
+    /// An object that represents PointOfInterest
+    /// </summary>
     public class PointOfInterest
     {
         [Key]
