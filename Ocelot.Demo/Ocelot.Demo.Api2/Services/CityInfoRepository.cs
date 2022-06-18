@@ -11,6 +11,11 @@ namespace Ocelot.Demo.Api2.Services
     {
         private readonly CityInfoContext _cityInfoContext;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public CityInfoRepository(CityInfoContext context)
         {
             _cityInfoContext = context ?? throw new ArgumentNullException(nameof(context));
