@@ -8,6 +8,9 @@ namespace Ocelot.Demo.Api2.Entities
     /// </summary>
     public class PointOfInterest
     {
+        /// <summary>
+        /// Id for PointOfInterest
+        /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
