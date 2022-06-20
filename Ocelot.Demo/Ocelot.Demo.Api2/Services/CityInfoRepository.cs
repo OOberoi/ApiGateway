@@ -142,6 +142,10 @@ namespace Ocelot.Demo.Api2.Services
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Deletes points of interest
+        /// </summary>
+        /// <param name="poi"></param>
         public void DeletePointOfInterestForCity(PointOfInterest poi)
         {
             _cityInfoContext.PointOfInterests.Remove(poi);

@@ -2,6 +2,9 @@
 
 namespace Ocelot.Demo.Api2.Services
 {
+    /// <summary>
+    /// An interface for CityInfoRespository
+    /// </summary>
     public interface ICityInfoRepository
     {
         Task<IEnumerable<City>>GetCitiesAsync();
