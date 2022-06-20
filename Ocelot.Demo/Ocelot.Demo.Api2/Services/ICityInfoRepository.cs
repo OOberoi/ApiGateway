@@ -7,6 +7,10 @@ namespace Ocelot.Demo.Api2.Services
     /// </summary>
     public interface ICityInfoRepository
     {
+        /// <summary>
+        /// Responsible for getting a list of Cities
+        /// </summary>
+        /// <returns></returns>
         Task<IEnumerable<City>>GetCitiesAsync();
         Task<(IEnumerable<City>, PaginationMetadata)> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize);
         Task<bool> CityExistsAsync(int cityId);
