@@ -12,6 +12,15 @@ namespace Ocelot.Demo.Api2.Services
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<City>>GetCitiesAsync();
+
+        /// <summary>
+        /// Gets cities for pagination
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="searchQuery"></param>
+        /// <param name="pageNum"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         Task<(IEnumerable<City>, PaginationMetadata)> GetCitiesAsync(string? name, string? searchQuery, int pageNum, int pageSize);
         Task<bool> CityExistsAsync(int cityId);
         Task<City?> GetCityAsync(int cityId, bool includesPointsOfInterest);
