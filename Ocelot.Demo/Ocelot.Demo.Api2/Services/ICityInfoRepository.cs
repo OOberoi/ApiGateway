@@ -66,6 +66,11 @@ namespace Ocelot.Demo.Api2.Services
         /// </summary>
         /// <returns></returns>
         Task<bool> SaveChangesAsync();
+
+        /// <summary>
+        /// Deletes poi for a given city
+        /// </summary>
+        /// <param name="poi"></param>
         void DeletePointOfInterestForCity(PointOfInterest poi);
         Task<bool> CityNameMatchesByCityId(string? cityName, int cityId);
     }
