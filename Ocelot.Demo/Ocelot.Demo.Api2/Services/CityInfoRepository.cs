@@ -151,6 +151,13 @@ namespace Ocelot.Demo.Api2.Services
             _cityInfoContext.PointOfInterests.Remove(poi);
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        /// <param name="cityName"></param>
+        /// <param name="cityId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Task<bool> CityNameMatchesByCityId(string? cityName, int cityId)
         {
             throw new NotImplementedException();
