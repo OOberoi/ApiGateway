@@ -37,6 +37,12 @@ namespace Ocelot.Demo.Api2.Services
         /// <param name="includesPointsOfInterest"></param>
         /// <returns></returns>
         Task<City?> GetCityAsync(int cityId, bool includesPointsOfInterest);
+
+        /// <summary>
+        /// Gets a list of poi for a city
+        /// </summary>
+        /// <param name="cityId"></param>
+        /// <returns></returns>
         Task<IEnumerable<PointOfInterest>> GetPointsOfInterestForCityAsync(int cityId);
         Task<PointOfInterest?> GetPointOfInterestForCityAsync(int cityId, int pointOfInterestId);
         Task AddPointOfInterestForCityAsync(int cityId, PointOfInterest poi);
