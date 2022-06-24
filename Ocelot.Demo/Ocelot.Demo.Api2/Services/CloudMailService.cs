@@ -8,6 +8,10 @@
         private readonly string _mailTo = String.Empty;
         public readonly string _mailFrom = String.Empty;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public CloudMailService(IConfiguration configuration)
         {
             _mailTo = configuration["mailSettings:mailToAddress"];
