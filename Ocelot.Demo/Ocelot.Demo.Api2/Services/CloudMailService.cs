@@ -1,5 +1,8 @@
 ﻿namespace Ocelot.Demo.Api2.Services
 {
+    /// <summary>
+    /// Cloud Mail Service object
+    /// </summary>
     public class CloudMailService : IMailService
     {
         private readonly string _mailTo = String.Empty;

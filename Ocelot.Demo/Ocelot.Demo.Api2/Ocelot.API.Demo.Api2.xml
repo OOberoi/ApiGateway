@@ -198,6 +198,73 @@
             </summary>
             <param name="modelBuilder"></param>
         </member>
+        <member name="T:Ocelot.Demo.Api2.Entities.City">
+            <summary>
+            A class that represents a city object
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.City.Id">
+            <summary>
+            Id of the City
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.City.Name">
+            <summary>
+            City Name
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.City.Description">
+            <summary>
+            Decription of City
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.City.PointsOfInterest">
+            <summary>
+            A collection of Point of Interests
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Entities.City.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Entities.PointOfInterest">
+            <summary>
+            An object that represents PointOfInterest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.PointOfInterest.Id">
+            <summary>
+            Id for PointOfInterest
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.PointOfInterest.Name">
+            <summary>
+            Name of City
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.PointOfInterest.City">
+            <summary>
+            CityId used as foreign key
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.PointOfInterest.CityId">
+            <summary>
+            City Id
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Entities.PointOfInterest.Description">
+            <summary>
+            Description of City
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Entities.PointOfInterest.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+        </member>
         <member name="T:Ocelot.Demo.Api2.Models.CityDto">
             <summary>
             A DTO for City with points of interest 
@@ -313,6 +380,162 @@
             <summary>
             Constructor 
             </summary>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Services.CityInfoRepository">
+            <summary>
+            A repository class for City Info
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.#ctor(Ocelot.Demo.Api2.DB_Context.CityInfoContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.GetCitiesAsync">
+            <summary>
+            A task that returns a list of cities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.CityExistsAsync(System.Int32)">
+            <summary>
+            AnyAsync will return true if a cityId is found and false otherwise
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.GetCityAsync(System.Int32,System.Boolean)">
+            <summary>
+            Get city by id
+            </summary>
+            <param name="cityId"></param>
+            <param name="includesPointsOfInterest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.IsCityExistsAsync(System.String,System.Int32)">
+            <summary>
+            Method that checks for city's existence
+            </summary>
+            <param name="cityName"></param>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.GetPointOfInterestForCityAsync(System.Int32,System.Int32)">
+            <summary>
+            Returns Points of Interest object for a given city
+            </summary>
+            <param name="cityId"></param>
+            <param name="pointOfInterestId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.GetPointsOfInterestForCityAsync(System.Int32)">
+            <summary>
+            Returns a list of points of interest for a given city
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.SaveChangesAsync">
+            <summary>
+            Returns true when one or more items in the entity are saved
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.DeletePointOfInterestForCity(Ocelot.Demo.Api2.Entities.PointOfInterest)">
+            <summary>
+            Deletes points of interest
+            </summary>
+            <param name="poi"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CityInfoRepository.CityNameMatchesByCityId(System.String,System.Int32)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="cityName"></param>
+            <param name="cityId"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Services.ICityInfoRepository">
+            <summary>
+            An interface for CityInfoRespository
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.GetCitiesAsync">
+            <summary>
+            Responsible for getting a list of Cities
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.GetCitiesAsync(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets cities for pagination
+            </summary>
+            <param name="name"></param>
+            <param name="searchQuery"></param>
+            <param name="pageNum"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.CityExistsAsync(System.Int32)">
+            <summary>
+            Checks if city exists
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.GetCityAsync(System.Int32,System.Boolean)">
+            <summary>
+            Gets city based with the option of Points of interest
+            </summary>
+            <param name="cityId"></param>
+            <param name="includesPointsOfInterest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.GetPointsOfInterestForCityAsync(System.Int32)">
+            <summary>
+            Gets a list of poi for a city
+            </summary>
+            <param name="cityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.GetPointOfInterestForCityAsync(System.Int32,System.Int32)">
+            <summary>
+            Gets city by point of interest
+            </summary>
+            <param name="cityId"></param>
+            <param name="pointOfInterestId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.AddPointOfInterestForCityAsync(System.Int32,Ocelot.Demo.Api2.Entities.PointOfInterest)">
+            <summary>
+            Adds point of interest for a given city
+            </summary>
+            <param name="cityId"></param>
+            <param name="poi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.SaveChangesAsync">
+            <summary>
+            Returns a bool upon saving changes 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.DeletePointOfInterestForCity(Ocelot.Demo.Api2.Entities.PointOfInterest)">
+            <summary>
+            Deletes poi for a given city
+            </summary>
+            <param name="poi"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.ICityInfoRepository.CityNameMatchesByCityId(System.String,System.Int32)">
+            <summary>
+            Checks if city matches the cityId
+            </summary>
+            <param name="cityName"></param>
+            <param name="cityId"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
