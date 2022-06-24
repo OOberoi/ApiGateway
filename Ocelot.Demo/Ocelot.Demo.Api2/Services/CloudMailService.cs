@@ -18,6 +18,11 @@
             _mailFrom = configuration["mailSettings:MailFromAddress"];
         }
 
+        /// <summary>
+        /// Send method used for sending the payload
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <param name="message"></param>
         public void Send(string subject, string message)
         {
             Console.WriteLine($"Mail from {_mailTo} to {_mailTo}, with {nameof(CloudMailService)}.");
