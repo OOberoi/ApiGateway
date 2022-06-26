@@ -1,5 +1,8 @@
 ﻿namespace Ocelot.Demo.Api2.Services
 {
+    /// <summary>
+    /// MailService interface
+    /// </summary>
     public class MailService : IMailService
     {
         
