@@ -6,6 +6,7 @@
     public class CloudMailService : IMailService
     {
         private readonly string _mailTo = String.Empty;
+        ///
         public readonly string _mailFrom = String.Empty;
 
         /// <summary>
