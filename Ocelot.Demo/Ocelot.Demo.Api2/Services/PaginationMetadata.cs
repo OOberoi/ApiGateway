@@ -24,6 +24,12 @@
         /// </summary>
         public int CurrentPage { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="totalItemCount"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="currentPage"></param>
         public PaginationMetadata(int totalItemCount, int pageSize, int currentPage)
         {
             TotalItemCount = totalItemCount;            
