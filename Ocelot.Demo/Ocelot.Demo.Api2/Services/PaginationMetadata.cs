@@ -5,6 +5,9 @@
     /// </summary>
     public class PaginationMetadata
     {
+        /// <summary>
+        /// Item count
+        /// </summary>
         public int TotalItemCount { get; set; }
         public int TotalPageCount { get; set; }
         public int PageSize { get; set; }
