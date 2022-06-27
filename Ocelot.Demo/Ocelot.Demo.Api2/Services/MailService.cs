@@ -22,6 +22,11 @@
             _mailFrom = configuration["mailSettings:MailFromAddress"];
         }
 
+        /// <summary>
+        /// Method to send message
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <param name="message"></param>
         public void Send(string subject, string message)
         {
             Console.WriteLine($"Mail from {_mailTo} to {_mailTo}, with {nameof(MailService)}.");
