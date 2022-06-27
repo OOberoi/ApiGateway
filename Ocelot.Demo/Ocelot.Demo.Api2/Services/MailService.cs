@@ -7,6 +7,9 @@
     {
         
         private readonly string _mailTo = String.Empty;
+        /// <summary>
+        /// prinvate vars
+        /// </summary>
         public readonly string _mailFrom = String.Empty;
 
         /// <summary>
