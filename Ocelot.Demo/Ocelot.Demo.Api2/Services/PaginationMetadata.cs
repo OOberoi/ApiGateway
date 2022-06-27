@@ -1,5 +1,8 @@
 ﻿namespace Ocelot.Demo.Api2.Services
 {
+    /// <summary>
+    /// A calss that is used to handle paging
+    /// </summary>
     public class PaginationMetadata
     {
         public int TotalItemCount { get; set; }
