@@ -18,6 +18,10 @@
         /// Total page size i.e. 5, 10, 15 etc.
         /// </summary>
         public int PageSize { get; set; }
+
+        /// <summary>
+        /// Current page in scope
+        /// </summary>
         public int CurrentPage { get; set; }
 
         public PaginationMetadata(int totalItemCount, int pageSize, int currentPage)
