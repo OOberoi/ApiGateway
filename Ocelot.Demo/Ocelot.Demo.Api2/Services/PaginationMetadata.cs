@@ -14,6 +14,9 @@
         /// Total page count
         /// </summary>
         public int TotalPageCount { get; set; }
+        /// <summary>
+        /// Total page size i.e. 5, 10, 15 etc.
+        /// </summary>
         public int PageSize { get; set; }
         public int CurrentPage { get; set; }
 
