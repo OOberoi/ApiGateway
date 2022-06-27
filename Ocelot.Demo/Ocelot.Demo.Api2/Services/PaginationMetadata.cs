@@ -9,6 +9,10 @@
         /// Item count
         /// </summary>
         public int TotalItemCount { get; set; }
+
+        /// <summary>
+        /// Total page count
+        /// </summary>
         public int TotalPageCount { get; set; }
         public int PageSize { get; set; }
         public int CurrentPage { get; set; }
