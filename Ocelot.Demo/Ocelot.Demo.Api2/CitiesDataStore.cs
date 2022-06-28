@@ -2,6 +2,9 @@
 
 namespace Ocelot.Demo.Api2
 {
+    /// <summary>
+    /// Class used to initialize data
+    /// </summary>
     public class CitiesDataStore
     {
         public List<CityDto> Cities { get; set; }
