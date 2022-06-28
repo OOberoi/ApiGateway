@@ -7,6 +7,9 @@ namespace Ocelot.Demo.Api2
     /// </summary>
     public class CitiesDataStore
     {
+        /// <summary>
+        /// A list of cities
+        /// </summary>
         public List<CityDto> Cities { get; set; }
 
         //add a singleton
