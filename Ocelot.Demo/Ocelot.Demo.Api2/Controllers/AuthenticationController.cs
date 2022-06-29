@@ -26,7 +26,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         /// <summary>
-        /// 
+        /// A nested class
         /// </summary>
         public class AuthenticationRequestBody
         {
