@@ -30,6 +30,9 @@ namespace Ocelot.Demo.Api2.Controllers
         /// </summary>
         public class AuthenticationRequestBody
         {
+            /// <summary>
+            /// Name of a user
+            /// </summary>
             public string? UserName { get; set; }
             public string? Password { get; set; }
         }
