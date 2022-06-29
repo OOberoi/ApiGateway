@@ -15,6 +15,9 @@ namespace Ocelot.Demo.Api2
         //add a singleton
         public static CitiesDataStore Instance { get; set; } = new CitiesDataStore();
 
+        /// <summary>
+        /// Constructor - Initializor
+        /// </summary>
         public CitiesDataStore()
         {
             // data initialization
