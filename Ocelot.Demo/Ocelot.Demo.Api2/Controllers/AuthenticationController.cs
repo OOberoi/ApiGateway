@@ -34,6 +34,9 @@ namespace Ocelot.Demo.Api2.Controllers
             /// Name of a user
             /// </summary>
             public string? UserName { get; set; }
+            /// <summary>
+            /// User password
+            /// </summary>
             public string? Password { get; set; }
         }
 
