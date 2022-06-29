@@ -12,7 +12,10 @@ namespace Ocelot.Demo.Api2
         /// </summary>
         public List<CityDto> Cities { get; set; }
 
-        //add a singleton
+
+        /// <summary>
+        ///add a singleton
+        /// </summary>
         public static CitiesDataStore Instance { get; set; } = new CitiesDataStore();
 
         /// <summary>
