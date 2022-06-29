@@ -16,7 +16,7 @@ namespace Ocelot.Demo.Api2.Controllers
     {
         IConfiguration _configuration;
         /// <summary>
-        /// 
+        /// Added a dependency injection
         /// </summary>
         /// <param name="configuration"></param>
         /// <exception cref="ArgumentNullException"></exception>
