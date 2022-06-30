@@ -59,6 +59,10 @@ namespace Ocelot.Demo.Api2.Controllers
             /// User's First Name
             /// </summary>
             public string FirstName { get; set; }
+
+            /// <summary>
+            /// User's Last Name
+            /// </summary>
             public string LastName { get; set; }
             public string City { get; set; }
 
