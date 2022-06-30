@@ -4,6 +4,26 @@
         <name>Ocelot.Demo.Api2</name>
     </assembly>
     <members>
+        <member name="T:Ocelot.Demo.Api2.CitiesDataStore">
+            <summary>
+            Class used to initialize data
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.CitiesDataStore.Cities">
+            <summary>
+            A list of cities
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.CitiesDataStore.Instance">
+             <summary>
+            add a singleton
+             </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.CitiesDataStore.#ctor">
+            <summary>
+            Constructor - Initializor
+            </summary>
+        </member>
         <member name="T:Ocelot.Demo.Api2.Controllers.AuthenticationController">
             <summary>
             
@@ -11,14 +31,24 @@
         </member>
         <member name="M:Ocelot.Demo.Api2.Controllers.AuthenticationController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            
+            Added a dependency injection
             </summary>
             <param name="configuration"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="T:Ocelot.Demo.Api2.Controllers.AuthenticationController.AuthenticationRequestBody">
             <summary>
-            
+            A nested class
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.AuthenticationRequestBody.UserName">
+            <summary>
+            Name of a user
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.AuthenticationRequestBody.Password">
+            <summary>
+            User password
             </summary>
         </member>
         <member name="T:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser">
@@ -458,6 +488,28 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="T:Ocelot.Demo.Api2.Services.CloudMailService">
+            <summary>
+            Cloud Mail Service object
+            </summary>
+        </member>
+        <member name="F:Ocelot.Demo.Api2.Services.CloudMailService._mailFrom">
+            <summary>
+            private vars
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CloudMailService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.CloudMailService.Send(System.String,System.String)">
+            <summary>
+            Send method used for sending the payload
+            </summary>
+            <param name="subject"></param>
+            <param name="message"></param>
+        </member>
         <member name="T:Ocelot.Demo.Api2.Services.ICityInfoRepository">
             <summary>
             An interface for CityInfoRespository
@@ -536,6 +588,74 @@
             <param name="cityName"></param>
             <param name="cityId"></param>
             <returns></returns>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Services.IMailService">
+            <summary>
+            An interface for Mail Service
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.IMailService.Send(System.String,System.String)">
+            <summary>
+            Siganature for Sending a subject body and message
+            </summary>
+            <param name="subject"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Services.MailService">
+            <summary>
+            MailService interface
+            </summary>
+        </member>
+        <member name="F:Ocelot.Demo.Api2.Services.MailService._mailFrom">
+            <summary>
+            prinvate vars
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.MailService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.MailService.Send(System.String,System.String)">
+            <summary>
+            Method to send message
+            </summary>
+            <param name="subject"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:Ocelot.Demo.Api2.Services.PaginationMetadata">
+            <summary>
+            A calss that is used to handle paging
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Services.PaginationMetadata.TotalItemCount">
+            <summary>
+            Item count
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Services.PaginationMetadata.TotalPageCount">
+            <summary>
+            Total page count
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Services.PaginationMetadata.PageSize">
+            <summary>
+            Total page size i.e. 5, 10, 15 etc.
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Services.PaginationMetadata.CurrentPage">
+            <summary>
+            Current page in scope
+            </summary>
+        </member>
+        <member name="M:Ocelot.Demo.Api2.Services.PaginationMetadata.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="totalItemCount"></param>
+            <param name="pageSize"></param>
+            <param name="currentPage"></param>
         </member>
     </members>
 </doc>

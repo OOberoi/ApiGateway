@@ -45,6 +45,9 @@ namespace Ocelot.Demo.Api2.Controllers
         /// </summary>
         public class CityInfoUser
         {
+            /// <summary>
+            /// User Id
+            /// </summary>
             public int UserId { get; set; }
             public string UserName { get; set; }
             public string FirstName { get; set; }
