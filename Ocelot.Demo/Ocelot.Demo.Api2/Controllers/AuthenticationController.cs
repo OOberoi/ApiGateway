@@ -49,6 +49,10 @@ namespace Ocelot.Demo.Api2.Controllers
             /// User Id
             /// </summary>
             public int UserId { get; set; }
+
+            /// <summary>
+            /// Name of a user
+            /// </summary>
             public string UserName { get; set; }
             public string FirstName { get; set; }
             public string LastName { get; set; }
