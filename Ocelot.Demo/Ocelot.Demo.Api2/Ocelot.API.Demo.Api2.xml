@@ -56,6 +56,31 @@
             returns CityInfoUser object
             </summary>
         </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.UserId">
+            <summary>
+            User Id
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.UserName">
+            <summary>
+            Name of a user
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.FirstName">
+            <summary>
+            User's First Name
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.LastName">
+            <summary>
+            User's Last Name
+            </summary>
+        </member>
+        <member name="P:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.City">
+            <summary>
+            Name of City
+            </summary>
+        </member>
         <member name="M:Ocelot.Demo.Api2.Controllers.AuthenticationController.CityInfoUser.#ctor(System.Int32,System.String,System.String,System.String,System.String)">
             <summary>
             
