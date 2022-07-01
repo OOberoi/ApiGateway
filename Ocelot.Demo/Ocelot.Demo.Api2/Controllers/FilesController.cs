@@ -31,7 +31,7 @@ namespace Ocelot.Demo.Api2.Controllers
         private static readonly string appPath = Directory.GetCurrentDirectory();
 
         /// <summary>
-        /// 
+        /// Returns a file content
         /// </summary>
         /// <param name="fileId"></param>
         /// <returns></returns>
