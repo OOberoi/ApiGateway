@@ -45,10 +45,29 @@ namespace Ocelot.Demo.Api2.Controllers
         /// </summary>
         public class CityInfoUser
         {
+            /// <summary>
+            /// User Id
+            /// </summary>
             public int UserId { get; set; }
+
+            /// <summary>
+            /// Name of a user
+            /// </summary>
             public string UserName { get; set; }
+
+            /// <summary>
+            /// User's First Name
+            /// </summary>
             public string FirstName { get; set; }
+
+            /// <summary>
+            /// User's Last Name
+            /// </summary>
             public string LastName { get; set; }
+
+            /// <summary>
+            /// Name of City
+            /// </summary>
             public string City { get; set; }
 
             /// <summary>
