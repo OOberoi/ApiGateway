@@ -152,7 +152,7 @@ namespace Ocelot.Demo.Api2.Controllers
 
         }
         /// <summary>
-        /// 
+        /// Adds an entry for point of interest
         /// </summary>
         /// <param name="cityId"></param>
         /// <param name="poi"></param>
