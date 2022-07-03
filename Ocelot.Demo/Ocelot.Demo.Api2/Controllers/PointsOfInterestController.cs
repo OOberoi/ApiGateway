@@ -83,7 +83,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns points of interest for a given city
         /// </summary>
         /// <param name="cityId"></param>
         /// <param name="poiId"></param>
