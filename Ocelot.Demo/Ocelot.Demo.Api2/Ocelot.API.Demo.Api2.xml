@@ -143,7 +143,7 @@
         </member>
         <member name="M:Ocelot.Demo.Api2.Controllers.FilesController.GetFile(System.String)">
             <summary>
-            
+            Returns a file content
             </summary>
             <param name="fileId"></param>
             <returns></returns>
