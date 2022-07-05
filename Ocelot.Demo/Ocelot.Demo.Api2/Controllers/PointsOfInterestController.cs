@@ -204,7 +204,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// Partiall updates point of interest
         /// </summary>
         /// <param name="cityId"></param>
         /// <param name="pointOfInterestId"></param>
