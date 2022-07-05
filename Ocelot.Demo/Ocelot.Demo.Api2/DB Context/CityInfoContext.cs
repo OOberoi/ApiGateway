@@ -120,8 +120,6 @@ namespace Ocelot.Demo.Api2.DB_Context
                     CityId = 5,
                     Description = "Attest the greatness of many civilizations"
                 });
-                
-                
             base.OnModelCreating(modelBuilder);
         }
     }
