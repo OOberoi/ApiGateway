@@ -25,7 +25,7 @@ namespace Ocelot.Demo.Api2.Controllers
         private readonly IMapper _mapper;
          
         /// <summary>
-        /// 
+        /// Constructor
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="mailService"></param>
