@@ -58,7 +58,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns a City with an option of points of interest
         /// </summary>
         /// <param name="id"></param>
         /// <param name="includePointsOfInterest"></param>
