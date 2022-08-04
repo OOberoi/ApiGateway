@@ -34,7 +34,7 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 
 // Proj props - Build -> Output has the xml file confiured
-builder.Services.AddSwaggerGen(setupAction =>
+builder.Services.AddSwaggerGen(setupAction => 
 {
     var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlCommentsFileFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
