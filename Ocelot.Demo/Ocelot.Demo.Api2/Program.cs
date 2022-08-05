@@ -1,13 +1,12 @@
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.AspNetCore.Mvc.Versioning;
-using System.Reflection;
 using Serilog;
+using System.Reflection;
+using System.Text;
 
 
 Log.Logger = new LoggerConfiguration()
