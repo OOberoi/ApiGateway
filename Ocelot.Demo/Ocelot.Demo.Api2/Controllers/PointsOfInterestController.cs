@@ -196,7 +196,6 @@ namespace Ocelot.Demo.Api2.Controllers
                 // This will still return status code 204, albeit with no content
                 return NoContent();
             }
-
             catch (Exception ex)
             {
                 _logger.LogCritical("An error occured while updating point of interest with id {pointOfInterestId}", ex);
