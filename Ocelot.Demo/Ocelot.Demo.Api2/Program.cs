@@ -1,13 +1,12 @@
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Ocelot.Demo.Api2;
 using Ocelot.Demo.Api2.DB_Context;
 using Ocelot.Demo.Api2.Services;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.AspNetCore.Mvc.Versioning;
-using System.Reflection;
 using Serilog;
+using System.Reflection;
+using System.Text;
 
 
 Log.Logger = new LoggerConfiguration()
@@ -34,7 +33,7 @@ builder.Services.AddControllers(options =>
 builder.Services.AddEndpointsApiExplorer();
 
 // Proj props - Build -> Output has the xml file confiured
-builder.Services.AddSwaggerGen(setupAction =>
+builder.Services.AddSwaggerGen(setupAction => 
 {
     var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlCommentsFileFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
@@ -73,7 +72,7 @@ builder.Services.AddAuthorization(options =>
     });
 });
 
-// Returns a file in the specifiedStream & the specified content type when downloading a file 
+// Returns a file in the specified Stream & the specified content type when downloading a file 
 builder.Services.AddSingleton<MailService>();
 
 // inject the mail service via dependency injection

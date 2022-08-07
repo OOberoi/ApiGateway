@@ -25,7 +25,7 @@ namespace Ocelot.Demo.Api2.Controllers
         private readonly IMapper _mapper;
          
         /// <summary>
-        /// 
+        /// Constructor
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="mailService"></param>
@@ -48,7 +48,7 @@ namespace Ocelot.Demo.Api2.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Returns points of interest for a given city
         /// </summary>
         /// <param name="cityId"></param>
         /// <returns></returns>
@@ -166,7 +166,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// Updates point of interest for a given city and poi id
         /// </summary>
         /// <param name="cityId"></param>
         /// <param name="pointOfInterestId"></param>
@@ -204,7 +204,7 @@ namespace Ocelot.Demo.Api2.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// Partiall updates point of interest
         /// </summary>
         /// <param name="cityId"></param>
         /// <param name="pointOfInterestId"></param>
