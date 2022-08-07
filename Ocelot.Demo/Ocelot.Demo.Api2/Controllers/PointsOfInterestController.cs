@@ -247,7 +247,6 @@ namespace Ocelot.Demo.Api2.Controllers
                 // Return 204 NoContent
                 return NoContent();
             }
-
             catch (Exception ex)
             {
                 _logger.LogCritical("An error occured while updating the point of interest!", ex);
